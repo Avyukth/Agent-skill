@@ -5,7 +5,10 @@
       "Bash(done)",
       "WebSearch",
       "WebFetch(domain:github.com)",
-      "Bash(tree:*)"
+      "Bash(tree:*)",
+      "Bash(eza:*)",
+      "Bash(cat:*)",
+      "Bash(python3:*)"
     ],
     "deny": [],
     "ask": []

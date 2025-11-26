@@ -335,6 +335,7 @@ function handleOfflineSubmit(form) {
 ```
 
 ## Related Skills
+- `mobile-frontend-design` - Microinteractions, dark mode, animation performance, loading states
 - `backend-dev-guidelines` - For API design supporting PWAs
 - `performance-optimization` - General performance patterns
 - `accessibility-guidelines` - Comprehensive accessibility patterns

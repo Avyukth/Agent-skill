@@ -216,6 +216,11 @@ Mobile accessibility is not optional (WCAG 2.2 Level AA):
 | Optimize mobile performance | [performance-optimization.md](resources/performance-optimization.md) |
 | Ensure mobile accessibility | [accessibility-mobile.md](resources/accessibility-mobile.md) |
 | Use SvelteKit PWA patterns | [sveltekit-pwa-patterns.md](resources/sveltekit-pwa-patterns.md) |
+| Add microinteractions | [microinteractions.md](resources/microinteractions.md) |
+| Optimize animations | [animation-performance.md](resources/animation-performance.md) |
+| Implement dark mode | [dark-mode-patterns.md](resources/dark-mode-patterns.md) |
+| Design loading states | [loading-states.md](resources/loading-states.md) |
+| Manage keyboard/focus | [keyboard-focus-management.md](resources/keyboard-focus-management.md) |
 
 ## Resource Files
 
@@ -236,6 +241,21 @@ WCAG 2.2 mobile criteria, screen readers (VoiceOver/TalkBack), focus management,
 
 ### [sveltekit-pwa-patterns.md](resources/sveltekit-pwa-patterns.md)
 SvelteKit-specific PWA implementation, service worker integration, SSR considerations, adapter configuration, build optimization
+
+### [microinteractions.md](resources/microinteractions.md)
+Button state architecture, form field feedback ("Reward Early, Punish Late"), toggle timing, toast notifications, tooltip patterns, WCAG 2.2 SC 2.5.8 compliance
+
+### [animation-performance.md](resources/animation-performance.md)
+16.67ms frame budget, GPU-accelerated properties (transform/opacity), will-change usage, layout thrashing prevention, CSS vs JavaScript animation, reduced motion support
+
+### [dark-mode-patterns.md](resources/dark-mode-patterns.md)
+Three-tier color token architecture, system preference detection, FOIT prevention, Material Design elevation, image adaptation, Svelte theme store implementation
+
+### [loading-states.md](resources/loading-states.md)
+Skeleton screens, progress indicators, optimistic UI patterns, loading state hierarchy, perceived vs actual load time, CLS prevention
+
+### [keyboard-focus-management.md](resources/keyboard-focus-management.md)
+Focus visibility (:focus-visible), focus trapping for modals, keyboard shortcuts, roving tabindex, hybrid device detection, skip links
 
 ---
 
@@ -262,5 +282,5 @@ SvelteKit-specific PWA implementation, service worker integration, SSR considera
 
 **Skill Status**: PRODUCTION-READY ✅
 **Line Count**: < 500 ✅
-**Progressive Disclosure**: 6 resource files ✅
-**Mobile-Specific**: PWA, touch, cross-device, performance ✅
+**Progressive Disclosure**: 11 resource files ✅
+**Mobile-Specific**: PWA, touch, cross-device, performance, microinteractions, dark mode ✅

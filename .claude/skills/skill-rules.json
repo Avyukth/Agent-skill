@@ -478,7 +478,7 @@
             "type": "domain",
             "enforcement": "suggest",
             "priority": "high",
-            "description": "Mobile-first PWA design for cross-device responsive frontends with touch optimization and accessibility",
+            "description": "Mobile-first PWA design for cross-device responsive frontends with touch optimization, microinteractions, animations, dark mode, and accessibility",
             "promptTriggers": {
                 "keywords": [
                     "mobile design",
@@ -498,14 +498,31 @@
                     "mobile breakpoint",
                     "adaptive layout",
                     "fluid typography",
-                    "safe area inset"
+                    "safe area inset",
+                    "microinteraction",
+                    "button state",
+                    "animation performance",
+                    "dark mode",
+                    "color token",
+                    "loading state",
+                    "skeleton screen",
+                    "focus management",
+                    "keyboard navigation",
+                    "focus trap",
+                    "reduced motion",
+                    "prefers-reduced-motion",
+                    "GPU acceleration",
+                    "will-change",
+                    "theme toggle"
                 ],
                 "intentPatterns": [
-                    "(create|build|design|implement).*?(mobile|responsive)",
-                    "(optimize|improve|fix).*?(mobile|touch|performance|accessibility|responsive)",
+                    "(create|build|design|implement).*?(mobile|responsive|microinteraction|animation|dark mode|loading)",
+                    "(optimize|improve|fix).*?(mobile|touch|performance|accessibility|responsive|animation)",
                     "(responsive|mobile-first).*?(design|layout|grid|flexbox)",
                     "(test|debug).*?(mobile|touch|responsive)",
-                    "(how to|how do I).*?(mobile|responsive|touch)"
+                    "(how to|how do I).*?(mobile|responsive|touch|dark mode|animation|focus)",
+                    "(add|implement|create).*?(dark mode|theme|skeleton|loading state|focus trap)",
+                    "(manage|handle).*?(focus|keyboard|accessibility)"
                 ]
             },
             "fileTriggers": {
@@ -533,7 +550,14 @@
                     "srcset=",
                     "loading=\"lazy\"",
                     "min-height.*44px",
-                    "min-width.*44px"
+                    "min-width.*44px",
+                    "prefers-color-scheme",
+                    "prefers-reduced-motion",
+                    ":focus-visible",
+                    "will-change",
+                    "transform.*translateX|translateY",
+                    "--color-",
+                    "skeleton"
                 ]
             }
         },
