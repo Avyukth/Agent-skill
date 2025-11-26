@@ -674,6 +674,83 @@
                     "Component\\("
                 ]
             }
+        },
+        "git-workflow-mastery": {
+            "type": "domain",
+            "enforcement": "suggest",
+            "priority": "high",
+            "description": "Comprehensive Git branching strategies and workflow best practices for modern development teams",
+            "promptTriggers": {
+                "keywords": [
+                    "git branching",
+                    "branching strategy",
+                    "trunk-based development",
+                    "gitflow",
+                    "github flow",
+                    "conventional commits",
+                    "commit message",
+                    "semantic versioning",
+                    "semver",
+                    "pull request",
+                    "pr review",
+                    "code review",
+                    "rebase",
+                    "merge",
+                    "rebase vs merge",
+                    "feature branch",
+                    "release branch",
+                    "hotfix branch",
+                    "branch protection",
+                    "ci/cd pipeline",
+                    "github actions",
+                    "semantic release",
+                    "changelog",
+                    "multi-agent development",
+                    "batch merging",
+                    "security hardening git",
+                    "feature flags",
+                    "pr size",
+                    "stacked prs",
+                    "git workflow",
+                    "release automation"
+                ],
+                "intentPatterns": [
+                    "(create|setup|implement|choose).*?(branching|branch strategy|git workflow)",
+                    "(how to|best practice).*?(branch|commit|merge|rebase|pr|pull request)",
+                    "(write|format|structure).*?(commit message|conventional commit)",
+                    "(setup|configure|implement).*?(ci/cd|github actions|semantic release)",
+                    "(decide|choose).*?(rebase|merge)",
+                    "(review|create|manage).*?(pull request|pr)",
+                    "(automate|setup).*?(release|versioning|changelog)",
+                    "(coordinate|manage).*?(multi-agent|parallel development|batch)"
+                ]
+            },
+            "fileTriggers": {
+                "pathPatterns": [
+                    "**/.github/workflows/*.yml",
+                    "**/.github/workflows/*.yaml",
+                    "**/commitlint.config.js",
+                    "**/commitlint.config.ts",
+                    "**/.releaserc*",
+                    "**/release.config.js",
+                    "**/.husky/**/*",
+                    "**/.gitignore",
+                    "**/.gitattributes",
+                    "**/CHANGELOG.md",
+                    "**/CONTRIBUTING.md"
+                ],
+                "contentPatterns": [
+                    "semantic-release",
+                    "@commitlint",
+                    "conventional-changelog",
+                    "husky",
+                    "git-cz",
+                    "commitizen",
+                    "on:\\s*push:|on:\\s*pull_request:",
+                    "branches:\\s*\\[main",
+                    "BREAKING CHANGE:"
+                ]
+            }
         }
     },
     "notes": {
