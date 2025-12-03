@@ -436,8 +436,61 @@ In-memory caching (Moka), distributed caching (Redis), cache strategies, multi-l
 
 ---
 
+## PAIML MCP Integration
+
+Integrate with PMAT (Pragmatic AI Labs MCP Agent Toolkit) for deterministic quality analysis:
+
+### Quick Quality Check
+
+```bash
+# Install PMAT
+cargo install pmat
+
+# Run Technical Debt Grading
+pmat analyze tdg
+
+# Calculate Rust Project Score (0-211)
+pmat repo-score --full
+
+# Run mutation testing
+pmat mutate --target src/ --threshold 85
+```
+
+### CI/CD Quality Gate
+
+```yaml
+# Add to .github/workflows/quality.yml
+- name: PMAT Quality Gate
+  run: |
+    cargo install pmat
+    pmat quality-gate --strict
+    pmat repo-score --min 150
+```
+
+### MCP Server Integration
+
+Configure Claude Desktop to use PMAT for code analysis:
+
+```json
+{
+  "mcpServers": {
+    "pmat": {
+      "command": "pmat",
+      "args": ["mcp"]
+    }
+  }
+}
+```
+
+See [paiml-mcp-toolkit](../paiml-mcp-toolkit/SKILL.md) for complete integration guide.
+
+---
+
 ## Related Skills
 
+- **paiml-mcp-toolkit** - PMAT integration and Rust Project Score
+- **kaizen-solaris-review** - Toyota Way code review with PAIML
+- **production-hardening-backend** - Security hardening with cargo-audit
 - **frontend-dev-guidelines** - SvelteKit/React frontend patterns
 - **database-verification** - Schema verification and consistency
 - **deployment-automation** - CI/CD pipeline patterns
@@ -448,3 +501,4 @@ In-memory caching (Moka), distributed caching (Redis), cache strategies, multi-l
 **Line Count**: < 500 ✅
 **Progressive Disclosure**: 15 resource files ✅
 **Rust-Specific**: Ownership, type safety, zero-cost abstractions ✅
+**PAIML Integration**: PMAT, TDG, Rust Project Score ✅

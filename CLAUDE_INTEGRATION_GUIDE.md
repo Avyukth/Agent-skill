@@ -64,10 +64,38 @@ The backend-dev-guidelines skill is designed for Express/Prisma. I can:
 Which would you prefer?
 ```
 
+### Rust Skills
+
+**rust-skills requires:**
+- Rust 1.75+
+- Axum or Actix-web (web framework)
+- SQLx (database)
+- Tokio (async runtime)
+
+**Before integrating, ask:**
+"Do you use Rust with Axum or Actix-web?"
+
+**Related Rust skills:**
+- **paiml-mcp-toolkit** - PMAT integration, Rust Project Score (0-211), TDG
+- **production-hardening-backend** - Security hardening, NIST controls
+- **kaizen-solaris-review** - Toyota Way code review
+
+### SvelteKit Skills
+
+**sveltekit-pwa-skills requires:**
+- SvelteKit 2.0+
+- Vite
+- Optional: @vite-pwa/sveltekit
+
+**production-hardening-frontend requires:**
+- SvelteKit
+- Knowledge of CSP, security headers
+
 ### Skills That Are Tech-Agnostic
 
 These work for ANY tech stack:
 - ✅ **skill-developer** - Meta-skill, no tech requirements
+- ✅ **paiml-mcp-toolkit** - PMAT works with 17+ languages (Rust, TypeScript, Python, etc.)
 - ✅ **route-tester** - Only requires JWT cookie auth (framework agnostic)
 - ✅ **error-tracking** - Sentry works with most stacks
 
@@ -218,6 +246,39 @@ cat $CLAUDE_PROJECT_DIR/.claude/skills/skill-rules.json | jq .
 - **Tech Requirements:** None!
 - **Copy as-is** - meta-skill, fully generic, teaches skill creation for ANY tech stack
 
+#### rust-skills
+- **Tech Requirements:** Rust 1.75+, Axum/Actix-web, SQLx, Tokio
+- **Ask:** "Do you use Rust with Axum?" "Where's your Rust code?"
+- **Customize:** pathPatterns for crates/src directories
+- **Example paths:** `crates/*/src/`, `backend/src/`, `services/*/`
+
+#### paiml-mcp-toolkit
+- **Tech Requirements:** Rust (primary), but PMAT supports 17+ languages
+- **Ask:** "Do you want PMAT for code quality analysis?" "Rust or polyglot?"
+- **Key commands:** `cargo install pmat`, `pmat mcp`, `pmat repo-score`
+- **Works with:** Claude Desktop MCP integration
+
+#### production-hardening-backend
+- **Tech Requirements:** Rust backend services
+- **Ask:** "Do you need security hardening for Rust?" "NIST compliance?"
+- **Customize:** pathPatterns, security controls
+- **Works with:** cargo-audit, cargo-deny, PMAT
+
+#### kaizen-solaris-review
+- **Tech Requirements:** Rust projects
+- **Ask:** "Do you want Toyota Way code review practices?"
+- **Focus:** Memory safety, unsafe code, zero warnings policy
+
+#### sveltekit-pwa-skills
+- **Tech Requirements:** SvelteKit 2.0+, Vite
+- **Ask:** "Do you use SvelteKit?" "Need PWA/offline support?"
+- **Customize:** pathPatterns for .svelte files
+
+#### production-hardening-frontend
+- **Tech Requirements:** SvelteKit
+- **Ask:** "Need security hardening for SvelteKit?" "CSP, OWASP?"
+- **Works with:** SvelteKit hooks, Vite config
+
 ---
 
 ## Adapting Skills for Different Tech Stacks
@@ -316,13 +377,15 @@ Then you can add Django-specific examples as you establish patterns.
 - ✅ File organization strategies (features/ pattern)
 - ✅ Progressive disclosure (main + resource files)
 - ✅ Repository pattern for data access
+- ✅ Toyota Way principles (Jidoka, Kaizen, quality gates)
 
 **Development Practices:**
 - ✅ Error handling philosophy
 - ✅ Input validation importance
 - ✅ Testing strategies
 - ✅ Performance optimization principles
-- ✅ TypeScript best practices
+- ✅ TypeScript/Rust type safety best practices
+- ✅ PMAT quality analysis (works with 17+ languages)
 
 **Framework-Specific Code:**
 - ❌ React hooks → Don't transfer to Vue/Angular
@@ -330,6 +393,7 @@ Then you can add Django-specific examples as you establish patterns.
 - ❌ Prisma queries → Different ORM syntax
 - ❌ Express middleware → Different framework patterns
 - ❌ Routing implementations → Framework-specific
+- ❌ Axum extractors → Don't transfer to Actix/Rocket
 
 ### When to Recommend Adaptation vs Skipping
 
@@ -836,6 +900,12 @@ Try editing a .vue file - the skill should activate.
 | **skill-developer** | None | ✅ None | Copy as-is |
 | **backend-dev-guidelines** | Express/Prisma/Node | ⚠️ Paths + tech check | "Use Express/Prisma?" "Where's backend?" |
 | **frontend-dev-guidelines** | React/MUI v7 | ⚠️⚠️ Paths + framework | "Use React/MUI v7?" "Where's frontend?" |
+| **rust-skills** | Rust/Axum/SQLx | ⚠️ Paths | "Use Rust with Axum?" "Where's Rust code?" |
+| **paiml-mcp-toolkit** | Rust (17+ langs) | ⚠️ MCP config | "Want PMAT quality analysis?" |
+| **production-hardening-backend** | Rust | ⚠️ Paths + controls | "Need Rust security hardening?" |
+| **kaizen-solaris-review** | Rust | ✅ Minimal | "Want Toyota Way review?" |
+| **sveltekit-pwa-skills** | SvelteKit | ⚠️ Paths | "Use SvelteKit?" "Need PWA?" |
+| **production-hardening-frontend** | SvelteKit | ⚠️ Paths | "Need SvelteKit security?" |
 | **route-tester** | JWT cookies | ⚠️ Auth + paths | "JWT cookie auth?" |
 | **error-tracking** | Sentry | ⚠️ Paths | "Use Sentry?" "Where's backend?" |
 | **skill-activation-prompt** | ✅ None | Copy as-is |
@@ -851,6 +921,10 @@ Try editing a .vue file - the skill should activate.
 | **tsc-check hooks** | Single-service project or different build setup |
 | **route-tester** | Not using JWT cookie authentication |
 | **frontend-dev-guidelines** | Not using React + MUI |
+| **rust-skills** | Not using Rust |
+| **paiml-mcp-toolkit** | Don't need code quality analysis |
+| **kaizen-solaris-review** | Not doing Rust code reviews |
+| **sveltekit-pwa-skills** | Not using SvelteKit |
 | **auth agents** | Not using JWT cookie auth |
 
 ---

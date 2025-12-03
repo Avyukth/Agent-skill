@@ -334,11 +334,25 @@ function handleOfflineSubmit(form) {
 }
 ```
 
+## Quality Analysis Integration
+
+PMAT supports TypeScript/JavaScript for frontend quality analysis:
+
+```bash
+# Analyze PWA code quality
+pmat analyze tdg --path src/ --language typescript
+
+# Check service worker complexity
+pmat analyze complexity --glob "src/service-worker.*"
+```
+
+See [paiml-mcp-toolkit](../paiml-mcp-toolkit/SKILL.md) for details.
+
 ## Related Skills
-- `mobile-frontend-design` - Microinteractions, dark mode, animation performance, loading states
-- `backend-dev-guidelines` - For API design supporting PWAs
-- `performance-optimization` - General performance patterns
-- `accessibility-guidelines` - Comprehensive accessibility patterns
+- [paiml-mcp-toolkit](../paiml-mcp-toolkit/SKILL.md) - Code quality analysis
+- [mobile-frontend-design](../mobile-frontend-design/frontend-SKILL.md) - Microinteractions, dark mode, animation performance
+- [production-hardening-frontend](../production-hardening-frontend/SKILL.md) - Security hardening for SvelteKit
+- [backend-dev-guidelines](../backend-dev-guidelines/SKILL.md) - For API design supporting PWAs
 
 ## References
 - [Official SvelteKit Docs - Service Workers](https://kit.svelte.dev/docs/service-workers)

@@ -589,6 +589,58 @@ This skill is organized into focused resource files for deep dives:
 
 ---
 
+## PAIML MCP Integration
+
+Automate Toyota Way principles with PMAT quality gates:
+
+### Jidoka (Stop-the-Line) Automation
+
+```bash
+# Install PMAT
+cargo install pmat
+
+# Automated quality gate (Andon cord)
+pmat quality-gate --strict
+
+# Technical Debt Grading with Kaizen tracking
+pmat analyze tdg --track-improvement
+
+# Zero SATD enforcement
+pmat analyze satd --zero-tolerance
+```
+
+### Kaizen Metrics Tracking
+
+```bash
+# Track improvement over sprints
+pmat metrics kaizen --since "last sprint"
+
+# Compare quality trajectory
+pmat compare --base main --head feature-branch
+
+# Quality archaeology for retrospectives
+pmat history --metric complexity --format chart
+```
+
+### CI/CD Toyota Way Pipeline
+
+```yaml
+# .github/workflows/kaizen-gates.yml
+- name: Toyota Way Quality Gates
+  run: |
+    cargo install pmat
+    # Jidoka: Stop on any violation
+    pmat quality-gate --strict
+    # Kaizen: Ensure improvement
+    pmat metrics kaizen --require-improvement
+    # Genchi Genbutsu: Verify actual behavior
+    cargo test --no-fail-fast
+```
+
+See [paiml-mcp-toolkit](../paiml-mcp-toolkit/SKILL.md) for Toyota Way gates reference.
+
+---
+
 ## Philosophy in Practice
 
 **Remember:** Perfect code is an asymptotic goal. What matters is:
@@ -634,8 +686,25 @@ PROCESS (Kaizen):
 □ Five-whys root cause
 □ Regular retrospectives
 □ Metrics-driven improvement
+
+PMAT COMMANDS:
+□ pmat quality-gate --strict
+□ pmat analyze tdg
+□ pmat metrics kaizen
 ```
 
 ---
 
+## Related Skills
+
+- [paiml-mcp-toolkit](../paiml-mcp-toolkit/SKILL.md) - PMAT integration and Toyota Way gates
+- [rust-skills](../rust-skills/SKILL.md) - Rust development patterns
+- [production-hardening-backend](../production-hardening-backend/SKILL.md) - Security hardening
+
+---
+
 **Excellence through respect. Quality through process. Improvement through reflection.**
+
+**Version**: 1.1
+**Last Updated**: 2025-12-03
+**PAIML Integration**: Toyota Way Gates, Kaizen Metrics ✅

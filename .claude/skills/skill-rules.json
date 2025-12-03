@@ -699,6 +699,109 @@
                 ]
             }
         },
+        "paiml-mcp-toolkit": {
+            "type": "domain",
+            "enforcement": "suggest",
+            "priority": "high",
+            "description": "PAIML MCP Agent Toolkit for deterministic Rust development with Technical Debt Grading, Rust Project Score, and Toyota Way quality gates",
+            "promptTriggers": {
+                "keywords": [
+                    "pmat",
+                    "paiml",
+                    "mcp server",
+                    "model context protocol",
+                    "technical debt grading",
+                    "tdg",
+                    "rust project score",
+                    "mutation testing",
+                    "deterministic agent",
+                    "fsm agent",
+                    "quality gate",
+                    "toyota way",
+                    "jidoka",
+                    "kaizen",
+                    "andon cord",
+                    "zero satd",
+                    "code quality analysis",
+                    "cargo install pmat",
+                    "pmat analyze",
+                    "pmat repo-score",
+                    "pmat quality-gate"
+                ],
+                "intentPatterns": [
+                    "(install|setup|configure).*?(pmat|paiml|mcp)",
+                    "(analyze|check|calculate).*?(technical debt|tdg|project score|quality)",
+                    "(run|use).*?(mutation testing|quality gate)",
+                    "(implement|add|setup).*?(toyota way|jidoka|kaizen|quality gate)",
+                    "(connect|integrate).*?(mcp|claude desktop)",
+                    "(how to|what is).*?(pmat|paiml|mcp|tdg|rust project score)"
+                ]
+            },
+            "fileTriggers": {
+                "pathPatterns": [
+                    "**/Cargo.toml",
+                    "**/*.rs",
+                    "**/.pmat/**/*",
+                    "**/pmat.toml",
+                    "**/claude_desktop_config.json"
+                ],
+                "contentPatterns": [
+                    "cargo install pmat",
+                    "pmat analyze",
+                    "pmat mcp",
+                    "pmat repo-score",
+                    "pmat quality-gate",
+                    "mcpServers"
+                ]
+            }
+        },
+        "kaizen-solaris-review": {
+            "type": "domain",
+            "enforcement": "suggest",
+            "priority": "high",
+            "description": "Unified Rust code review combining Solaris-Class technical excellence with Toyota Way continuous improvement",
+            "promptTriggers": {
+                "keywords": [
+                    "code review",
+                    "rust review",
+                    "kaizen",
+                    "toyota way",
+                    "solaris class",
+                    "memory safety review",
+                    "unsafe review",
+                    "zero warnings",
+                    "review checklist",
+                    "pr review rust",
+                    "quality review",
+                    "nemawashi",
+                    "genchi genbutsu",
+                    "hansei",
+                    "continuous improvement"
+                ],
+                "intentPatterns": [
+                    "(review|analyze|check).*?(rust|code|pr|pull request)",
+                    "(implement|follow|apply).*?(toyota way|kaizen|review process)",
+                    "(check|verify|ensure).*?(memory safety|unsafe|quality)",
+                    "(how to|best practice).*?(code review|rust review)",
+                    "(improve|continuous improvement).*?(code|rust|quality)"
+                ]
+            },
+            "fileTriggers": {
+                "pathPatterns": [
+                    "**/*.rs",
+                    "**/Cargo.toml",
+                    "**/.github/workflows/*.yml"
+                ],
+                "contentPatterns": [
+                    "unsafe",
+                    "// SAFETY:",
+                    "#\\[deny\\(warnings\\)\\]",
+                    "#\\[forbid\\(unsafe_code\\)\\]",
+                    "cargo clippy",
+                    "cargo test"
+                ]
+            }
+        },
         "git-workflow-mastery": {
             "type": "domain",
             "enforcement": "suggest",

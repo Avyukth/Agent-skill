@@ -311,6 +311,53 @@ Continuous Monitoring → Incident Response → Patch Management → Audit
 
 ---
 
+## PAIML MCP Integration
+
+Integrate PMAT for automated security and quality analysis:
+
+### Security-Focused Analysis
+
+```bash
+# Install PMAT
+cargo install pmat
+
+# Run security audit chain
+cargo audit && cargo deny check && pmat analyze security
+
+# Check Rust Project Score (security category)
+pmat repo-score --category security
+
+# Dependency health analysis
+pmat analyze dependencies --security-focus
+```
+
+### Toyota Way Quality Gates (Jidoka)
+
+```bash
+# Pre-deployment security gate
+pmat quality-gate --strict --security
+
+# Zero vulnerability policy
+pmat analyze security --zero-tolerance
+```
+
+### CI/CD Security Pipeline
+
+```yaml
+# .github/workflows/security-hardening.yml
+- name: PAIML Security Gate
+  run: |
+    cargo install pmat cargo-audit cargo-deny
+    cargo audit
+    cargo deny check
+    pmat analyze security --nist-mapping
+    pmat repo-score --category security --min 40
+```
+
+See [paiml-mcp-toolkit](../paiml-mcp-toolkit/SKILL.md) for complete integration.
+
+---
+
 ## Compliance and Standards
 
 This skill aligns with:
@@ -324,14 +371,17 @@ This skill aligns with:
 ---
 
 **Related Skills:**
-- [Rust Backend Development Guidelines](../SKILL.md)
-- [Error Handling](../resources/error-handling.md)
-- [Security Patterns](../resources/security-patterns.md)
-- [Deployment Guide](../resources/deployment-guide.md)
+- [paiml-mcp-toolkit](../paiml-mcp-toolkit/SKILL.md) - PMAT security analysis
+- [kaizen-solaris-review](../kaizen-solaris-review/SKILL.md) - Toyota Way quality gates
+- [rust-skills](../rust-skills/SKILL.md) - Rust Backend Development Guidelines
+- [Error Handling](../rust-skills/resources/error-handling.md)
+- [Security Patterns](../rust-skills/resources/security-patterns.md)
+- [Deployment Guide](../rust-skills/resources/deployment-guide.md)
 
 ---
 
-**Version**: 1.0
-**Last Updated**: 2025-11-15
+**Version**: 1.1
+**Last Updated**: 2025-12-03
 **Status**: Production-Ready
 **Compliance**: NIST SP 800-53, CIS Level 2, OWASP
+**PAIML Integration**: PMAT Security Analysis, Toyota Way Gates ✅

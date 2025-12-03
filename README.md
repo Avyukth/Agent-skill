@@ -46,6 +46,11 @@ Browse the [skills catalog](.claude/skills/) and copy what you need.
 **Available:**
 - **backend-dev-guidelines** - Node.js/Express/TypeScript patterns
 - **frontend-dev-guidelines** - React/TypeScript/MUI v7 patterns
+- **rust-skills** - Rust backend with Axum, SQLx, async patterns
+- **paiml-mcp-toolkit** - PMAT integration, Rust Project Score, Toyota Way gates
+- **production-hardening-backend** - Rust security hardening, NIST controls
+- **kaizen-solaris-review** - Toyota Way code review for Rust
+- **sveltekit-pwa-skills** - SvelteKit PWA with offline support
 - **skill-developer** - Meta-skill for creating skills
 - **route-tester** - Test authenticated API routes
 - **error-tracking** - Sentry integration patterns
@@ -141,13 +146,19 @@ dev/
 
 ## Component Catalog
 
-### 🎨 Skills (5)
+### 🎨 Skills (13+)
 
 | Skill | Lines | Purpose | Best For |
 |-------|-------|---------|----------|
 | [**skill-developer**](.claude/skills/skill-developer/) | 426 | Creating and managing skills | Meta-development |
-| [**backend-dev-guidelines**](.claude/skills/backend-dev-guidelines/) | 304 | Express/Prisma/Sentry patterns | Backend APIs |
+| [**backend-dev-guidelines**](.claude/skills/backend-dev-guidelines/) | 304 | Express/Prisma/Sentry patterns | Node.js Backend APIs |
 | [**frontend-dev-guidelines**](.claude/skills/frontend-dev-guidelines/) | 398 | React/MUI v7/TypeScript | React frontends |
+| [**rust-skills**](.claude/skills/rust-skills/) | ~500 | Axum, SQLx, async patterns, BMC | Rust Backend |
+| [**paiml-mcp-toolkit**](.claude/skills/paiml-mcp-toolkit/) | ~400 | PMAT, TDG, Rust Project Score | Rust Quality Analysis |
+| [**production-hardening-backend**](.claude/skills/production-hardening-backend/) | ~390 | NIST controls, security hardening | Rust Security |
+| [**kaizen-solaris-review**](.claude/skills/kaizen-solaris-review/) | ~710 | Toyota Way, code review | Rust Code Review |
+| [**production-hardening-frontend**](.claude/skills/production-hardening-frontend/) | ~520 | CSP, OWASP, Core Web Vitals | SvelteKit Security |
+| [**sveltekit-pwa-skills**](.claude/skills/sveltekit-pwa-skills/) | ~360 | PWA, offline, push notifications | SvelteKit PWA |
 | [**route-tester**](.claude/skills/route-tester/) | 389 | Testing authenticated routes | API testing |
 | [**error-tracking**](.claude/skills/error-tracking/) | ~250 | Sentry integration | Error monitoring |
 

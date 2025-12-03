@@ -490,13 +490,34 @@ This skill aligns with:
 
 ---
 
-**Related Skills:**
-- [Rust Backend Development](../../SKILL.md)
-- [Production Hardening - Backend](../../production-hardening/SKILL.md)
+## Quality Analysis Integration
+
+While PMAT (PAIML MCP Agent Toolkit) is optimized for Rust, it supports TypeScript analysis for frontend projects:
+
+```bash
+# Install PMAT (supports 17+ languages including TypeScript)
+cargo install pmat
+
+# Analyze TypeScript frontend code
+pmat analyze tdg --path src/ --language typescript
+
+# Check complexity in SvelteKit components
+pmat analyze complexity --glob "**/*.svelte"
+```
+
+See [paiml-mcp-toolkit](../paiml-mcp-toolkit/SKILL.md) for polyglot analysis.
 
 ---
 
-**Version**: 1.0
-**Last Updated**: 2025-11-15
+**Related Skills:**
+- [paiml-mcp-toolkit](../paiml-mcp-toolkit/SKILL.md) - PMAT polyglot code analysis
+- [rust-skills](../rust-skills/SKILL.md) - Rust Backend Development
+- [production-hardening-backend](../production-hardening-backend/SKILL.md) - Backend security hardening
+- [sveltekit-pwa-skills](../sveltekit-pwa-skills/SKILL.md) - SvelteKit PWA patterns
+
+---
+
+**Version**: 1.1
+**Last Updated**: 2025-12-03
 **Status**: Production-Ready
 **Compliance**: OWASP, WCAG 2.1, Core Web Vitals
