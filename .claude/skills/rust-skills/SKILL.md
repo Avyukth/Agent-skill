@@ -379,6 +379,7 @@ impl UserBmc {
 | Use message queues | [message-queues.md](resources/message-queues.md) |
 | Implement caching | [caching-patterns.md](resources/caching-patterns.md) |
 | Write tests | [testing-guide.md](resources/testing-guide.md) |
+| Follow TDD workflow | [extreme-tdd-workflow.md](resources/extreme-tdd-workflow.md) |
 | Implement security | [security-patterns.md](resources/security-patterns.md) |
 | Optimize performance | [performance-optimization.md](resources/performance-optimization.md) |
 | Structure projects | [project-structure.md](resources/project-structure.md) |
@@ -433,6 +434,70 @@ RabbitMQ (lapin), Apache Kafka (rdkafka), event-driven architecture, async proce
 
 ### [caching-patterns.md](resources/caching-patterns.md)
 In-memory caching (Moka), distributed caching (Redis), cache strategies, multi-level caching
+
+### [extreme-tdd-workflow.md](resources/extreme-tdd-workflow.md)
+RED-GREEN-REFACTOR cycle, atomic commits, quality gates, mutation testing, CI/CD integration
+
+---
+
+## Extreme TDD Workflow
+
+Every feature follows the **RED-GREEN-REFACTOR** cycle with atomic commits:
+
+### The Cycle
+
+```bash
+# RED Phase: Write failing tests FIRST
+git commit -m "[RED] PROJ-XXX: Add failing tests for feature"
+
+# GREEN Phase: Minimal implementation to pass tests
+git commit -m "[GREEN] PROJ-XXX: Implement feature"
+
+# REFACTOR Phase: Meet quality gates, clean up
+git commit -m "[REFACTOR] PROJ-XXX: Clean up and optimize"
+
+# Final: Squash into atomic commit
+git rebase -i HEAD~3
+git commit -m "PROJ-XXX: Feature description
+
+- Coverage: 85% ✅
+- Mutation score: 92% ✅
+- Quality grade: A ✅
+
+Closes #XXX"
+```
+
+### Quality Gates Per Phase
+
+| Phase | Requirements |
+|-------|--------------|
+| **RED** | Tests compile, tests fail, no implementation |
+| **GREEN** | All tests pass, minimal code only |
+| **REFACTOR** | Coverage ≥85%, Mutation ≥80%, TDG grade A/B |
+
+### Commit Message Format
+
+```
+[PHASE] TICKET-ID: Short description
+
+- What was done
+- Why it was done
+
+Coverage: XX% | Mutation: XX% | Grade: X
+```
+
+### Integration with PMAT
+
+```bash
+# After GREEN phase, verify quality
+pmat analyze tdg                    # Check debt grade
+pmat mutate --target src/ --threshold 80  # Mutation testing
+pmat repo-score --min 150           # Overall score
+
+# Only proceed to REFACTOR if gates pass
+```
+
+See [extreme-tdd-workflow.md](resources/extreme-tdd-workflow.md) for complete guide.
 
 ---
 
@@ -499,6 +564,7 @@ See [paiml-mcp-toolkit](../paiml-mcp-toolkit/SKILL.md) for complete integration 
 
 **Skill Status**: PRODUCTION-READY ✅
 **Line Count**: < 500 ✅
-**Progressive Disclosure**: 15 resource files ✅
+**Progressive Disclosure**: 16 resource files ✅
 **Rust-Specific**: Ownership, type safety, zero-cost abstractions ✅
 **PAIML Integration**: PMAT, TDG, Rust Project Score ✅
+**Extreme TDD**: RED-GREEN-REFACTOR workflow ✅

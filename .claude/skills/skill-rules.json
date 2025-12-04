@@ -345,7 +345,7 @@
             "type": "domain",
             "enforcement": "suggest",
             "priority": "high",
-            "description": "Comprehensive Rust backend development guide for production-grade web services",
+            "description": "Comprehensive Rust backend development guide for production-grade web services with Extreme TDD workflow",
             "promptTriggers": {
                 "keywords": [
                     "rust",
@@ -368,7 +368,19 @@
                     "rust authentication",
                     "rust testing",
                     "sea-query",
-                    "backend model controller"
+                    "backend model controller",
+                    "extreme tdd",
+                    "red green refactor",
+                    "tdd rust",
+                    "test driven development",
+                    "mutation testing",
+                    "cargo mutants",
+                    "property based testing",
+                    "proptest",
+                    "cargo tarpaulin",
+                    "code coverage rust",
+                    "quality gate rust",
+                    "atomic commits"
                 ],
                 "intentPatterns": [
                     "(create|add|build|implement).*?(rust|backend|service|api|endpoint|route)",
@@ -377,7 +389,11 @@
                     "(test|benchmark|optimize).*?rust",
                     "(deploy|docker).*?rust",
                     "(structure|organize|refactor).*?rust.*?(backend|service|project)",
-                    "(secure|authenticate|authorize).*?rust"
+                    "(secure|authenticate|authorize).*?rust",
+                    "(tdd|test driven|red green refactor).*?(rust|backend|feature)",
+                    "(write|create|add).*?(failing test|test first).*?rust",
+                    "(mutation|property based).*?test",
+                    "(coverage|quality gate).*?(rust|cargo)"
                 ]
             },
             "fileTriggers": {
@@ -799,6 +815,79 @@
                     "#\\[forbid\\(unsafe_code\\)\\]",
                     "cargo clippy",
                     "cargo test"
+                ]
+            }
+        },
+        "deploy-pulumi-argocd-canary": {
+            "type": "domain",
+            "enforcement": "suggest",
+            "priority": "high",
+            "description": "Production-ready Kubernetes deployment with Pulumi Go, ArgoCD, Kustomize, and Argo Rollouts canary releases",
+            "promptTriggers": {
+                "keywords": [
+                    "pulumi",
+                    "pulumi go",
+                    "argocd",
+                    "argo cd",
+                    "argo rollouts",
+                    "canary deployment",
+                    "canary release",
+                    "blue green deployment",
+                    "progressive delivery",
+                    "gitops",
+                    "kubernetes deployment",
+                    "k8s deployment",
+                    "kind cluster",
+                    "local kubernetes",
+                    "kustomize",
+                    "kustomize overlay",
+                    "eks deployment",
+                    "gke deployment",
+                    "aks deployment",
+                    "infrastructure as code",
+                    "iac kubernetes",
+                    "helm chart",
+                    "distroless",
+                    "multi-stage docker",
+                    "zero downtime deployment",
+                    "rollback strategy",
+                    "analysis template",
+                    "prometheus metrics deployment"
+                ],
+                "intentPatterns": [
+                    "(deploy|setup|configure).*?(kubernetes|k8s|eks|gke|aks)",
+                    "(create|build|implement).*?(pulumi|argocd|gitops)",
+                    "(canary|blue.?green|progressive).*?(deployment|release|delivery)",
+                    "(local|kind).*?(kubernetes|cluster|development)",
+                    "(dockerfile|container).*?(go|rust|node|python)",
+                    "(kustomize|overlay).*?(dev|staging|prod)",
+                    "(rollout|rollback).*?(strategy|kubernetes)",
+                    "(zero.?downtime|automated.?rollback)"
+                ]
+            },
+            "fileTriggers": {
+                "pathPatterns": [
+                    "**/Pulumi.yaml",
+                    "**/Pulumi.*.yaml",
+                    "**/argocd/**/*.yaml",
+                    "**/k8s/base/**/*.yaml",
+                    "**/k8s/overlays/**/*.yaml",
+                    "**/kustomization.yaml",
+                    "**/kind-config.yaml",
+                    "**/kind-*.yaml",
+                    "**/*rollout*.yaml",
+                    "**/*analysis*.yaml"
+                ],
+                "contentPatterns": [
+                    "pulumi\\.Run",
+                    "argoproj\\.io/v1alpha1",
+                    "kind: Rollout",
+                    "kind: AnalysisTemplate",
+                    "kind: Application",
+                    "kind: ApplicationSet",
+                    "kustomize\\.config\\.k8s\\.io",
+                    "kind\\.x-k8s\\.io",
+                    "gcr\\.io/distroless"
                 ]
             }
         },

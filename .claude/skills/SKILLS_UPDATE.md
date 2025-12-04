@@ -1,70 +1,110 @@
-# Skills Update - November 2024
+# Skills Update - December 2024
 
-## New Skills Added ✨
+## Major Update: PAIML Integration & Extreme TDD Workflow ✨
 
-Two new production-ready skills have been added to the claude-code-infrastructure-showcase project:
+This update introduces comprehensive integration with the PAIML MCP Agent Toolkit and adds Extreme TDD workflow support for Rust development.
 
-### 1. PRD Creation Skill (`prd-creation`)
+---
 
-**Location**: `.claude/skills/prd/`
+## New Skills Added
 
-**Purpose**: Create comprehensive Product Requirements Documents from product ideas
+### 1. PAIML MCP Toolkit (`paiml-mcp-toolkit`)
+
+**Location**: `.claude/skills/paiml-mcp-toolkit/`
+
+**Purpose**: Integrate PMAT (Pragmatic AI Labs MCP Agent Toolkit) for deterministic code quality analysis
 
 **Key Features**:
-- ✅ Dual methodology support (Agile/MVP + Enterprise/Detailed)
-- ✅ 8-section comprehensive template
-- ✅ Evidence-based (research from 10+ sources, 2024)
-- ✅ Meta-skills principles integrated
-- ✅ Success metrics and validation checklists
+- ✅ Technical Debt Grading (TDG) - A+ to F scoring
+- ✅ Rust Project Score (0-211 points comprehensive scoring)
+- ✅ Toyota Way Quality Gates (Jidoka, Kaizen)
+- ✅ MCP server configuration for Claude Desktop
+- ✅ Mutation testing integration
 
 **Auto-Activation**:
-- Keywords: prd, product requirements, user stories, mvp, acceptance criteria (24 total)
-- Intent patterns: 7 regex patterns for PRD-related requests
-- File triggers: `**/PRD*.md`, `**/requirements/**/*.md`, etc.
+- Keywords: pmat, paiml, mcp server, technical debt grading, rust project score (25+ total)
+- Intent patterns: Install/setup/configure PMAT, analyze quality, run mutation testing
+- File triggers: `**/Cargo.toml`, `**/*.rs`, `**/pmat.toml`
 
 **Files**:
-- `SKILL.md` (422 lines) - Main skill guidance
-- `resources/prd-template.md` (708 lines) - Comprehensive template
-- `README.md` (315 lines) - Documentation
-- `skill-rules.json` - Auto-activation config
+- `SKILL.md` (~400 lines) - Main skill guidance
+- `resources/rust-score-criteria.md` - Complete 211-point scoring breakdown
+- `resources/toyota-way-gates.md` - Jidoka/Kaizen implementation
+- `resources/mcp-configuration.md` - Claude Desktop MCP setup
 
 **Compliance**: ✅ Meta-skill verified, <500 lines, progressive disclosure
 
 ---
 
-### 2. C4 Architecture Skill (`c4-architecture`)
+### 2. Kaizen-Solaris Review (`kaizen-solaris-review`)
 
-**Location**: `.claude/skills/c4-architecture/`
+**Location**: `.claude/skills/kaizen-solaris-review/`
 
-**Purpose**: Create C4 Model architecture diagrams (Context, Container, Component, Code)
+**Purpose**: Unified Rust code review combining Solaris-Class technical excellence with Toyota Way continuous improvement
 
 **Key Features**:
-- ✅ All 4 C4 levels supported
-- ✅ PlantUML and Mermaid templates
-- ✅ Production-ready examples (e-commerce, healthcare, analytics)
-- ✅ Best practices and pattern library
-- ✅ Comprehensive checklists for each diagram type
+- ✅ Memory safety review (zero unsafe tolerance)
+- ✅ Toyota Way principles (Nemawashi, Genchi Genbutsu, Hansei)
+- ✅ Quality gates with PMAT integration
+- ✅ Comprehensive review checklists
 
 **Auto-Activation**:
-- Keywords: c4, architecture diagram, plantuml, mermaid, system design (17 total)
-- Intent patterns: 7 regex patterns for architecture-related requests
-- File triggers: `**/*.puml`, `**/*.mmd`, architecture directories
+- Keywords: code review, rust review, kaizen, toyota way, solaris class, memory safety
+- Intent patterns: Review Rust code, implement Toyota Way, check quality
+- File triggers: `**/*.rs`, `**/Cargo.toml`, GitHub workflow files
 
-**Files**:
-- `SKILL.md` (370 lines) - Main skill guidance
-- `resources/plantuml-templates.md` (612 lines) - PlantUML templates
-- `resources/mermaid-templates.md` (565 lines) - Mermaid templates
-- `resources/complete-examples.md` (455 lines) - Real-world examples
-- `README.md` (224 lines) - Documentation
-- `skill-rules.json` - Auto-activation config
+---
 
-**Compliance**: ✅ Meta-skill verified, <500 lines main file, progressive disclosure
+## Existing Skills Updated
+
+### rust-skills (Major Update)
+
+**Added**:
+- **Extreme TDD Workflow** - RED-GREEN-REFACTOR cycle with atomic commits
+- **PAIML MCP Integration** - TDG, Rust Project Score, quality gates
+- New resource: `resources/extreme-tdd-workflow.md`
+
+**Extreme TDD Features**:
+- RED phase: Write failing tests first
+- GREEN phase: Minimal implementation to pass
+- REFACTOR phase: Meet quality gates (Coverage ≥85%, Mutation ≥80%, TDG A/B)
+- Atomic commits with squash workflow
+- CI/CD integration with quality gates
+
+**New Keywords Added to skill-rules.json**:
+- extreme tdd, red green refactor, tdd rust
+- test driven development, mutation testing
+- cargo mutants, property based testing, proptest
+- cargo tarpaulin, code coverage rust
+- quality gate rust, atomic commits
+
+---
+
+### production-hardening-backend
+
+**Added**:
+- PAIML security analysis integration
+- Cargo audit/deny references with PMAT
+
+---
+
+### production-hardening-frontend
+
+**Added**:
+- PMAT polyglot reference for multi-language analysis
+
+---
+
+### sveltekit-pwa-skills
+
+**Added**:
+- Quality analysis integration with PMAT
 
 ---
 
 ## Project Skills Summary
 
-**Total Skills**: 12
+**Total Skills**: 16+
 
 1. skill-developer
 2. backend-dev-guidelines
@@ -73,55 +113,89 @@ Two new production-ready skills have been added to the claude-code-infrastructur
 5. error-tracking
 6. production-hardening-frontend
 7. production-hardening-backend
-8. rust-skills
+8. rust-skills (+ Extreme TDD)
 9. sveltekit-pwa-skills
 10. mobile-frontend-design
-11. **prd** (NEW)
-12. **c4-architecture** (NEW)
+11. prd
+12. c4-architecture
+13. paiml-mcp-toolkit
+14. kaizen-solaris-review
+15. git-workflow-mastery
+16. **deploy-pulumi-argocd-canary** (NEW - Dec 2025)
 
 ---
 
 ## Usage Examples
 
-### PRD Creation
+### Extreme TDD Workflow
 
 ```
-"Create a PRD for a mobile habit tracking app. Include MVP features,
-user stories with acceptance criteria, and a 3-phase rollout plan."
+"I'm implementing a new user service in Rust. Help me follow the
+RED-GREEN-REFACTOR workflow with proper atomic commits."
 ```
 
-### C4 Architecture
+### PAIML Quality Analysis
 
 ```
-"Generate a C4 container diagram for our e-commerce platform showing
-the React frontend, Node.js API gateway, microservices, and databases."
+"Run PMAT analysis on this Rust project and calculate the
+Rust Project Score. Check if we meet the quality gates."
+```
+
+### Kaizen Code Review
+
+```
+"Review this Rust PR following Toyota Way principles. Check for
+memory safety, zero warnings policy, and continuous improvement."
+```
+
+### Kubernetes Deployment with Canary
+
+```
+"Deploy my Rust Axum backend to GKE with canary releases using
+Pulumi Go and ArgoCD. Include Prometheus-based analysis."
 ```
 
 ---
 
 ## Installation Notes
 
-- ✅ Skills copied to `.claude/skills/`
-- ✅ `skill-rules.json` updated and merged
-- ✅ Backup created: `skill-rules.json.backup`
-- ✅ Both skills verified and ready to use
+- ✅ All skills installed to `.claude/skills/`
+- ✅ Skills copied to global `~/.claude/skills/`
+- ✅ `skill-rules.json` updated with all new triggers
+- ✅ README.md updated with new skill count (13+)
+- ✅ CLAUDE_INTEGRATION_GUIDE.md updated
 
 ---
 
-## Meta-Skills Compliance
+## Quality Gate Reference
 
-Both skills follow meta-skill conventions:
-
-- **500-Line Rule**: ✅ Main SKILL.md files under 500 lines
-- **Progressive Disclosure**: ✅ Detailed content in resource files
-- **Auto-Activation**: ✅ Comprehensive trigger configuration
-- **Evidence-Based**: ✅ Research-backed best practices
-- **Meta-Skills Integration**: ✅ Adaptability, collaboration, iteration
+| Metric | Threshold | Tool |
+|--------|-----------|------|
+| Coverage | ≥85% | `cargo tarpaulin` |
+| Mutation Score | ≥80% | `pmat mutate` / `cargo mutants` |
+| TDG Grade | A or B | `pmat analyze tdg` |
+| Clippy | Zero warnings | `cargo clippy -- -D warnings` |
+| Repo Score | ≥150/211 | `pmat repo-score` |
 
 ---
 
-**Date**: November 18, 2024
+## Commit Message Format (TDD)
+
+```
+[PHASE] TICKET-ID: Short description
+
+- What was done
+- Why it was done
+
+Coverage: XX% | Mutation: XX% | Grade: X
+```
+
+Phases: `[RED]`, `[GREEN]`, `[REFACTOR]`
+
+---
+
+**Date**: December 4, 2024
 **Status**: Production-ready
-**Verification**: Complete
+**Previous Update**: November 18, 2024 (PRD, C4 Architecture)
 
-*These skills are now active for the claude-code-infrastructure-showcase project and demonstrate the meta-skill framework in action.*
+*This update brings deterministic quality analysis and disciplined TDD workflow to Rust development in the claude-code-infrastructure-showcase project.*
