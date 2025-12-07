@@ -891,6 +891,63 @@
                 ]
             }
         },
+        "task-master-prompts": {
+            "type": "domain",
+            "enforcement": "suggest",
+            "priority": "high",
+            "description": "AI-powered task management prompt engineering for PRD parsing, task expansion, and complexity analysis",
+            "promptTriggers": {
+                "keywords": [
+                    "task master",
+                    "task breakdown",
+                    "prd parsing",
+                    "parse prd",
+                    "task expansion",
+                    "expand task",
+                    "subtask generation",
+                    "complexity analysis",
+                    "task complexity",
+                    "prompt template",
+                    "handlebars template",
+                    "ai task management",
+                    "task generation",
+                    "llm prompts",
+                    "prompt engineering tasks",
+                    "task schema",
+                    "research mode",
+                    "variant selection",
+                    "json schema validation"
+                ],
+                "intentPatterns": [
+                    "(create|build|design).*?(prompt|template).*?(task|prd)",
+                    "(parse|convert|transform).*?(prd|requirements).*?task",
+                    "(expand|breakdown|split).*?task.*?(subtask|smaller)",
+                    "(analyze|calculate|score).*?(complexity|task)",
+                    "(generate|create).*?task.*?(ai|llm|prompt)",
+                    "(how to|implement).*?(task master|prompt template)"
+                ]
+            },
+            "fileTriggers": {
+                "pathPatterns": [
+                    "**/prompts/**/*.json",
+                    "**/*-prompt*.json",
+                    "**/*task*.json",
+                    "**/prd*.md",
+                    "**/PRD*.md"
+                ],
+                "contentPatterns": [
+                    "\"id\".*:.*\"parse-prd\"",
+                    "\"id\".*:.*\"expand-task\"",
+                    "\"id\".*:.*\"add-task\"",
+                    "\"prompts\".*:.*\\{.*\"default\"",
+                    "\\{\\{#if.*\\}\\}",
+                    "\\{\\{#each.*\\}\\}",
+                    "complexityScore",
+                    "subtaskCount",
+                    "expansionPrompt"
+                ]
+            }
+        },
         "git-workflow-mastery": {
             "type": "domain",
             "enforcement": "suggest",

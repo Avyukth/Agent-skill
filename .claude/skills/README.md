@@ -37,6 +37,43 @@ Skills are modular knowledge bases that Claude loads when needed. They provide:
 
 ---
 
+### task-master-prompts
+**Purpose:** AI-powered task management prompt engineering
+
+**Files:** 5 resource files (main + resources)
+
+**Covers:**
+- PRD parsing into structured tasks
+- Task expansion into subtasks
+- Complexity analysis and scoring
+- Research-augmented task generation
+- Handlebars template syntax
+- JSON schema validation
+- Variant selection patterns
+- Codebase analysis integration
+
+**Use when:**
+- Building AI task management systems
+- Parsing PRDs into development tasks
+- Creating prompt templates for LLMs
+- Analyzing task complexity
+- Implementing task expansion logic
+
+**Customization:** ✅ None - copy as-is (prompt engineering patterns)
+
+**Example usage:**
+```json
+{
+  "promptTriggers": {
+    "keywords": ["task master", "prd parsing", "task breakdown"]
+  }
+}
+```
+
+**[View Skill →](task-master-prompts/)**
+
+---
+
 ### backend-dev-guidelines
 **Purpose:** Node.js/Express/TypeScript development patterns
 
