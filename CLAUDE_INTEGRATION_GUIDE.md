@@ -91,10 +91,27 @@ Which would you prefer?
 - SvelteKit
 - Knowledge of CSP, security headers
 
+### AI/Prompt Engineering Skills
+
+**task-master-prompts requires:**
+- Understanding of LLM prompt engineering
+- JSON schema knowledge
+- Handlebars template syntax (optional)
+
+**Before integrating, ask:**
+"Are you building AI-powered task management systems?"
+
+**Use when:**
+- Parsing PRDs into development tasks
+- Creating prompt templates for LLMs
+- Implementing task expansion logic
+- Analyzing task complexity
+
 ### Skills That Are Tech-Agnostic
 
 These work for ANY tech stack:
 - ✅ **skill-developer** - Meta-skill, no tech requirements
+- ✅ **task-master-prompts** - AI prompt engineering, works with any LLM
 - ✅ **paiml-mcp-toolkit** - PMAT works with 17+ languages (Rust, TypeScript, Python, etc.)
 - ✅ **route-tester** - Only requires JWT cookie auth (framework agnostic)
 - ✅ **error-tracking** - Sentry works with most stacks
@@ -268,6 +285,13 @@ cat $CLAUDE_PROJECT_DIR/.claude/skills/skill-rules.json | jq .
 - **Tech Requirements:** Rust projects
 - **Ask:** "Do you want Toyota Way code review practices?"
 - **Focus:** Memory safety, unsafe code, zero warnings policy
+
+#### task-master-prompts
+- **Tech Requirements:** None! Works with any LLM system
+- **Ask:** "Are you building AI task management?" "Need PRD parsing?"
+- **Copy as-is** - prompt engineering patterns are framework-agnostic
+- **Use when:** Building task breakdown systems, AI agents, PRD parsing
+- **Covers:** Handlebars templates, JSON schema, complexity analysis, research mode
 
 #### sveltekit-pwa-skills
 - **Tech Requirements:** SvelteKit 2.0+, Vite
@@ -898,6 +922,7 @@ Try editing a .vue file - the skill should activate.
 | Component | Tech Requirements | Customization | What to Ask |
 |-----------|------------------|--------------|-------------|
 | **skill-developer** | None | ✅ None | Copy as-is |
+| **task-master-prompts** | None | ✅ None | Copy as-is |
 | **backend-dev-guidelines** | Express/Prisma/Node | ⚠️ Paths + tech check | "Use Express/Prisma?" "Where's backend?" |
 | **frontend-dev-guidelines** | React/MUI v7 | ⚠️⚠️ Paths + framework | "Use React/MUI v7?" "Where's frontend?" |
 | **rust-skills** | Rust/Axum/SQLx | ⚠️ Paths | "Use Rust with Axum?" "Where's Rust code?" |

@@ -51,6 +51,7 @@ Browse the [skills catalog](.claude/skills/) and copy what you need.
 - **production-hardening-backend** - Rust security hardening, NIST controls
 - **kaizen-solaris-review** - Toyota Way code review for Rust
 - **sveltekit-pwa-skills** - SvelteKit PWA with offline support
+- **task-master-prompts** - AI task management prompt engineering
 - **skill-developer** - Meta-skill for creating skills
 - **route-tester** - Test authenticated API routes
 - **error-tracking** - Sentry integration patterns
@@ -160,6 +161,7 @@ dev/
 | [**production-hardening-frontend**](.claude/skills/production-hardening-frontend/) | ~520 | CSP, OWASP, Core Web Vitals | SvelteKit Security |
 | [**sveltekit-pwa-skills**](.claude/skills/sveltekit-pwa-skills/) | ~360 | PWA, offline, push notifications | SvelteKit PWA |
 | [**deploy-pulumi-argocd-canary**](.claude/skills/deploy-pulumi-argocd-canary/) | ~480 | Pulumi Go, ArgoCD, canary releases | K8s Deployment |
+| [**task-master-prompts**](.claude/skills/task-master-prompts/) | ~300 | PRD parsing, task expansion, complexity | AI Task Management |
 | [**route-tester**](.claude/skills/route-tester/) | 389 | Testing authenticated routes | API testing |
 | [**error-tracking**](.claude/skills/error-tracking/) | ~250 | Sentry integration | Error monitoring |
 
