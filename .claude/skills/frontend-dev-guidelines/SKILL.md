@@ -295,6 +295,7 @@ if (isLoading) {
 | TypeScript types | [typescript-standards.md](resources/typescript-standards.md) |
 | Forms/Auth/DataGrid | [common-patterns.md](resources/common-patterns.md) |
 | See full examples | [complete-examples.md](resources/complete-examples.md) |
+| Design review/UI standards | [design-review-checklist.md](resources/design-review-checklist.md) |
 
 ---
 

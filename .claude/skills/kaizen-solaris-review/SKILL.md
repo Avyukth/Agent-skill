@@ -586,6 +586,7 @@ This skill is organized into focused resource files for deep dives:
 8. **[Review Process](resources/review-process.md)** - Nemawashi, checklists, workflow
 9. **[Continuous Improvement](resources/continuous-improvement.md)** - Kaizen, metrics, learning
 10. **[Practical Checklists](resources/checklists.md)** - Ready-to-use review checklists
+11. **[Pragmatic Review Framework](resources/pragmatic-review-framework.md)** - High-velocity review, GitHub Actions, triage matrix
 
 ---
 

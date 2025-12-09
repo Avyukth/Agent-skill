@@ -88,7 +88,7 @@
             "type": "guardrail",
             "enforcement": "block",
             "priority": "high",
-            "description": "React/TypeScript best practices including MUI v7 compatibility",
+            "description": "React/TypeScript best practices including MUI v7 compatibility and design review standards",
             "promptTriggers": {
                 "keywords": [
                     "component",
@@ -104,12 +104,20 @@
                     "Grid",
                     "styling",
                     "frontend",
-                    "React"
+                    "React",
+                    "design review",
+                    "accessibility",
+                    "wcag",
+                    "responsive design",
+                    "ui review",
+                    "ux review",
+                    "/design-review"
                 ],
                 "intentPatterns": [
                     "(create|add|make|build|update|modify|edit).*?(component|UI|page|modal|dialog|form)",
                     "(how to|best practice).*?(component|react|MUI)",
-                    "(style|design|layout).*?(component|UI)"
+                    "(style|design|layout).*?(component|UI)",
+                    "(review|check).*?(design|ui|ux|accessibility)"
                 ]
             },
             "fileTriggers": {
@@ -285,7 +293,7 @@
             "type": "domain",
             "enforcement": "suggest",
             "priority": "high",
-            "description": "Enterprise-grade Rust backend production hardening",
+            "description": "Enterprise-grade Rust backend production hardening with security review methodology",
             "promptTriggers": {
                 "keywords": [
                     "rust backend security",
@@ -308,14 +316,19 @@
                     "rust production",
                     "tokio runtime",
                     "axum security",
-                    "actix security"
+                    "actix security",
+                    "security review",
+                    "vulnerability scan",
+                    "security audit",
+                    "/security-review"
                 ],
                 "intentPatterns": [
                     "(secure|harden|production).*?(backend|rust|service)",
                     "(implement|add|setup).*?(circuit breaker|retry|fault tolerance|resilience)",
                     "(configure|setup|enable).*?(monitoring|logging|tracing|metrics|observability)",
                     "(deploy|production|release).*?(rust|backend|service)",
-                    "(audit|scan|check).*?(dependencies|vulnerabilities|security|crates)"
+                    "(audit|scan|check).*?(dependencies|vulnerabilities|security|crates)",
+                    "(security|vulnerability).*?(review|scan|audit)"
                 ]
             },
             "fileTriggers": {
@@ -775,7 +788,7 @@
             "type": "domain",
             "enforcement": "suggest",
             "priority": "high",
-            "description": "Unified Rust code review combining Solaris-Class technical excellence with Toyota Way continuous improvement",
+            "description": "Unified Rust code review combining Solaris-Class technical excellence with Toyota Way continuous improvement. Includes pragmatic review framework for high-velocity teams.",
             "promptTriggers": {
                 "keywords": [
                     "code review",
@@ -792,14 +805,20 @@
                     "nemawashi",
                     "genchi genbutsu",
                     "hansei",
-                    "continuous improvement"
+                    "continuous improvement",
+                    "pragmatic review",
+                    "net positive",
+                    "hierarchical review",
+                    "triage matrix",
+                    "/review"
                 ],
                 "intentPatterns": [
                     "(review|analyze|check).*?(rust|code|pr|pull request)",
                     "(implement|follow|apply).*?(toyota way|kaizen|review process)",
                     "(check|verify|ensure).*?(memory safety|unsafe|quality)",
                     "(how to|best practice).*?(code review|rust review)",
-                    "(improve|continuous improvement).*?(code|rust|quality)"
+                    "(improve|continuous improvement).*?(code|rust|quality)",
+                    "(pragmatic|hierarchical).*?review"
                 ]
             },
             "fileTriggers": {

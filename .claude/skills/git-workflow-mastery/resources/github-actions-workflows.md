@@ -9,6 +9,7 @@
 5. [Release Automation](#release-automation)
 6. [Multi-Agent Orchestration](#multi-agent-orchestration)
 7. [Reusable Workflows](#reusable-workflows)
+8. [Claude Code AI-Powered Reviews](#claude-code-ai-powered-reviews)
 
 ---
 
@@ -848,6 +849,122 @@ jobs:
       coverage-threshold: '85'
     secrets:
       CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+```
+
+---
+
+## Claude Code AI-Powered Reviews
+
+### Claude Code Review Action
+
+Automate AI-powered code reviews on every PR using Anthropic's official GitHub Action:
+
+```yaml
+# .github/workflows/claude-code-review.yml
+name: Claude Code Review
+
+on:
+  pull_request:
+    types: [opened, synchronize, ready_for_review, reopened]
+
+jobs:
+  claude-review:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+      issues: read
+      id-token: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Run Claude Code Review
+        uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          # Alternative: claude-api-key: ${{ secrets.CLAUDE_API_KEY }}
+          track_progress: true
+          prompt: |
+            REPO: ${{ github.repository }}
+            PR NUMBER: ${{ github.event.pull_request.number }}
+
+            Perform comprehensive code review:
+            1. Code Quality - Clean code, error handling, maintainability
+            2. Security - Vulnerabilities, input validation, authentication
+            3. Performance - Bottlenecks, queries, resource usage
+            4. Testing - Coverage, edge cases, test quality
+            5. Documentation - Comments, README updates
+
+            Provide inline comments for specific issues.
+            Use top-level comments for general observations.
+            Reference CLAUDE.md for style conventions.
+
+            Use `gh pr comment` to leave review.
+
+          claude_args: '--model claude-opus-4-1-20250805 --allowed-tools "Bash(gh pr comment:*),Bash(gh pr diff:*),Bash(gh pr view:*)"'
+```
+
+### Claude Security Review Action
+
+Automated security scanning with Anthropic's specialized security review action:
+
+```yaml
+# .github/workflows/claude-security-review.yml
+name: Claude Security Review
+
+permissions:
+  pull-requests: write
+  contents: read
+
+on:
+  pull_request:
+
+jobs:
+  security:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 2
+
+      - uses: anthropics/claude-code-security-review@main
+        with:
+          comment-pr: true
+          claude-api-key: ${{ secrets.ANTHROPIC_API_KEY }}
+          claude-model: claude-opus-4-1-20250805
+          custom-security-scan-instructions: |
+            Focus on OWASP Top 10 vulnerabilities.
+            Flag hardcoded secrets with HIGH severity.
+```
+
+### Required Secrets
+
+| Secret | Purpose | How to Get |
+|--------|---------|------------|
+| `CLAUDE_CODE_OAUTH_TOKEN` | OAuth authentication | [Claude Code OAuth](https://docs.anthropic.com/claude-code) |
+| `ANTHROPIC_API_KEY` | API key authentication | [Anthropic Console](https://console.anthropic.com) |
+
+### Best Practices
+
+1. **Use OAuth token** for production (more secure than API keys)
+2. **Enable track_progress** for visibility into review status
+3. **Customize prompts** to match your team's review standards
+4. **Reference CLAUDE.md** for project-specific conventions
+5. **Combine with traditional CI** - Claude reviews complement, not replace, linting/testing
+
+### Integration with EIB-TBD
+
+Add Claude review as a required status check:
+
+```yaml
+# In your branch protection rules, require:
+# - claude-review (from claude-code-review.yml)
+# - security (from claude-security-review.yml)
 ```
 
 ---

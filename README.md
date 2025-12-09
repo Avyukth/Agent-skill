@@ -129,13 +129,17 @@ skill-name/
 │   ├── post-tool-use-tracker.sh   (ESSENTIAL)
 │   ├── tsc-check.sh        (optional, needs customization)
 │   └── trigger-build-resolver.sh  (optional)
-├── agents/                 # 10 specialized agents
+├── agents/                 # 11 specialized agents
 │   ├── code-architecture-reviewer.md
+│   ├── design-review.md         (NEW)
 │   ├── refactor-planner.md
 │   ├── frontend-error-fixer.md
 │   └── ... 7 more
-└── commands/               # 3 slash commands
+└── commands/               # 6 slash commands
     ├── dev-docs.md
+    ├── review.md                (NEW)
+    ├── security-review.md       (NEW)
+    ├── design-review.md         (NEW)
     └── ...
 
 dev/
@@ -184,7 +188,7 @@ dev/
 
 **👉 [Hook setup guide →](.claude/hooks/README.md)**
 
-### 🤖 Agents (10)
+### 🤖 Agents (11)
 
 **Standalone - just copy and use!**
 
@@ -192,6 +196,7 @@ dev/
 |-------|---------|
 | code-architecture-reviewer | Review code for architectural consistency |
 | code-refactor-master | Plan and execute refactoring |
+| **design-review** | **Playwright-based UI/UX design review** |
 | documentation-architect | Generate comprehensive documentation |
 | frontend-error-fixer | Debug frontend errors |
 | plan-reviewer | Review development plans |
@@ -203,13 +208,16 @@ dev/
 
 **👉 [How agents work →](.claude/agents/README.md)**
 
-### 💬 Slash Commands (3)
+### 💬 Slash Commands (6)
 
 | Command | Purpose |
 |---------|---------|
 | /dev-docs | Create structured dev documentation |
 | /dev-docs-update | Update docs before context reset |
 | /route-research-for-testing | Research route patterns for testing |
+| **/review** | **Pragmatic code review of pending changes** |
+| **/security-review** | **Security vulnerability scan of changes** |
+| **/design-review** | **UI/UX design review with accessibility checks** |
 
 ---
 

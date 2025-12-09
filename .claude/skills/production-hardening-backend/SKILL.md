@@ -141,6 +141,14 @@ This skill is organized into focused resource files:
 - Load testing and capacity planning
 - Database query optimization
 
+### 7. [Security Review Methodology](resources/security-review-methodology.md)
+- Systematic vulnerability assessment process
+- Security categories (injection, auth, crypto, data exposure)
+- Severity classification (HIGH/MEDIUM/LOW)
+- Confidence scoring (0.7-1.0 scale)
+- False positive filtering guidelines
+- CI/CD integration with Claude Security Review
+
 ---
 
 ## NIST SP 800-53 Control Mapping

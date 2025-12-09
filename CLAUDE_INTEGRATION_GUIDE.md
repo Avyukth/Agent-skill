@@ -285,6 +285,9 @@ cat $CLAUDE_PROJECT_DIR/.claude/skills/skill-rules.json | jq .
 - **Tech Requirements:** Rust projects
 - **Ask:** "Do you want Toyota Way code review practices?"
 - **Focus:** Memory safety, unsafe code, zero warnings policy
+- **NEW:** Pragmatic Review Framework for high-velocity teams
+- **NEW:** GitHub Actions CI/CD integration templates
+- **Slash Command:** `/review` for on-demand code review
 
 #### task-master-prompts
 - **Tech Requirements:** None! Works with any LLM system
@@ -621,6 +624,17 @@ cp showcase/.claude/commands/[command].md \\
    $CLAUDE_PROJECT_DIR/.claude/commands/
 ```
 
+### Available Commands (6)
+
+| Command | Purpose | Dependencies |
+|---------|---------|--------------|
+| `/dev-docs` | Create structured dev documentation | None |
+| `/dev-docs-update` | Update docs before context reset | None |
+| `/route-research-for-testing` | Research route patterns | None |
+| `/review` | Pragmatic code review of changes | None |
+| `/security-review` | Security vulnerability scan | None |
+| `/design-review` | UI/UX design review with accessibility | Playwright MCP (optional) |
+
 ### Customize Paths
 
 Commands may reference dev docs paths. **Check and update:**
@@ -633,6 +647,28 @@ Commands may reference dev docs paths. **Check and update:**
 **route-research-for-testing:**
 - May reference service paths
 - Ask about their API structure
+
+### Review Commands (NEW)
+
+Three new review-focused slash commands are available:
+
+**`/review`** - Pragmatic code review:
+- Reviews git diff of pending changes
+- Uses hierarchical review checklist (Architecture → Security → Testing)
+- Outputs findings with [BLOCKER], [IMPROVEMENT], and Nit: categories
+- Integration: ✅ Copy as-is
+
+**`/security-review`** - Security vulnerability scan:
+- OWASP-focused security review
+- Only reports HIGH-confidence (>80%) findings
+- Filters false positives automatically
+- Integration: ✅ Copy as-is
+
+**`/design-review`** - UI/UX design review:
+- 7-phase review process
+- Accessibility checks (WCAG 2.1 AA)
+- Responsive testing (375px, 768px, 1440px)
+- Integration: ⚠️ Best with Playwright MCP for automated testing
 
 ---
 
@@ -929,6 +965,7 @@ Try editing a .vue file - the skill should activate.
 | **paiml-mcp-toolkit** | Rust (17+ langs) | ⚠️ MCP config | "Want PMAT quality analysis?" |
 | **production-hardening-backend** | Rust | ⚠️ Paths + controls | "Need Rust security hardening?" |
 | **kaizen-solaris-review** | Rust | ✅ Minimal | "Want Toyota Way review?" |
+| **design-review agent** | Playwright MCP | ⚠️ MCP config | "Need UI/UX review?" |
 | **sveltekit-pwa-skills** | SvelteKit | ⚠️ Paths | "Use SvelteKit?" "Need PWA?" |
 | **production-hardening-frontend** | SvelteKit | ⚠️ Paths | "Need SvelteKit security?" |
 | **route-tester** | JWT cookies | ⚠️ Auth + paths | "JWT cookie auth?" |

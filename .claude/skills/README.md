@@ -37,6 +37,34 @@ Skills are modular knowledge bases that Claude loads when needed. They provide:
 
 ---
 
+### kaizen-solaris-review
+**Purpose:** Toyota Way code review combining technical excellence with continuous improvement
+
+**Files:** 11 resource files (main + resources)
+
+**Covers:**
+- Memory safety & unsafe code review
+- Testing strategy (unit, property-based, fuzzing)
+- Security hardening (cargo-audit, supply chain)
+- Code quality and complexity limits
+- Review process (Nemawashi, Jidoka, Kaizen)
+- **Pragmatic Review Framework** (NEW - high-velocity teams)
+- **GitHub Actions CI/CD integration** (NEW)
+
+**Use when:**
+- Reviewing Rust code
+- Implementing quality gates
+- Setting up automated code review
+- Following Toyota Way practices
+
+**Slash Command:** `/review` - On-demand pragmatic code review
+
+**Customization:** ✅ Minimal - copy as-is for Rust projects
+
+**[View Skill →](kaizen-solaris-review/)**
+
+---
+
 ### task-master-prompts
 **Purpose:** AI-powered task management prompt engineering
 
@@ -199,6 +227,65 @@ Skills are modular knowledge bases that Claude loads when needed. They provide:
 **Customization:** ⚠️ Update `pathPatterns` for your backend
 
 **[View Skill →](error-tracking/)**
+
+---
+
+### production-hardening-backend
+**Purpose:** Enterprise-grade production hardening for Rust backend services
+
+**Files:** 7 resource files (main + resources)
+
+**Covers:**
+- NIST SP 800-53 control mapping
+- Defense-in-depth security patterns
+- Fault tolerance (circuit breakers, retries)
+- Monitoring & observability (Prometheus, OpenTelemetry)
+- Container hardening (distroless, non-root)
+- **Security Review Methodology** (NEW - OWASP-focused)
+- **Confidence scoring and false positive filtering** (NEW)
+
+**Use when:**
+- Hardening Rust backends for production
+- Implementing security controls
+- Setting up observability
+- Security code reviews
+
+**Slash Command:** `/security-review` - On-demand security vulnerability scan
+
+**Customization:** ⚠️ Update `pathPatterns` for your Rust project
+
+**[View Skill →](production-hardening-backend/)**
+
+---
+
+### frontend-dev-guidelines
+**Purpose:** React/TypeScript/MUI v7 development patterns
+
+**Files:** 11 resource files (main + resources)
+
+**Covers:**
+- Modern React patterns (Suspense, lazy loading)
+- useSuspenseQuery for data fetching
+- MUI v7 styling (Grid uses size={{}} prop)
+- TanStack Router
+- File organization (features/ pattern)
+- Performance optimization
+- **Design Review Checklist** (NEW - S-Tier SaaS standards)
+- **Accessibility (WCAG 2.1 AA)** (NEW)
+- **Responsive design viewports** (NEW)
+
+**Use when:**
+- Creating React components
+- Reviewing UI/UX changes
+- Ensuring accessibility compliance
+- Design system consistency
+
+**Slash Command:** `/design-review` - On-demand UI/UX design review
+**Agent:** `design-review` - Playwright-based design review
+
+**Customization:** ⚠️ Update `pathPatterns` + verify you use React/MUI
+
+**[View Skill →](frontend-dev-guidelines/)**
 
 ---
 

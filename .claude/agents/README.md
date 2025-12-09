@@ -16,7 +16,7 @@ Agents are autonomous Claude instances that handle specific complex tasks. Unlik
 
 ---
 
-## Available Agents (10)
+## Available Agents (11)
 
 ### code-architecture-reviewer
 **Purpose:** Review code for architectural consistency and best practices
@@ -41,6 +41,27 @@ Agents are autonomous Claude instances that handle specific complex tasks. Unlik
 - Improving code maintainability
 
 **Integration:** ✅ Copy as-is
+
+---
+
+### design-review
+**Purpose:** Conduct comprehensive UI/UX design reviews using Playwright
+
+**When to use:**
+- Reviewing frontend PRs before merge
+- Verifying accessibility compliance (WCAG 2.1 AA)
+- Testing responsive design across viewports
+- Checking visual consistency and polish
+- Validating user flows and interactions
+
+**Features:**
+- 7-phase review process (Preparation → Code Health)
+- Playwright-based automated viewport testing
+- Screenshot capture for visual evidence
+- Accessibility keyboard navigation testing
+- Responsive testing (375px, 768px, 1440px)
+
+**Integration:** ⚠️ Requires Playwright MCP server for full functionality
 
 ---
 
@@ -209,6 +230,7 @@ That's it! Agents work immediately.
 |-------|-----------|---------------|---------------|
 | code-architecture-reviewer | Medium | ✅ None | No |
 | code-refactor-master | High | ✅ None | No |
+| **design-review** | Medium | ⚠️ Playwright MCP | No |
 | documentation-architect | Medium | ✅ None | No |
 | frontend-error-fixer | Medium | ⚠️ Screenshot paths | No |
 | plan-reviewer | Low | ✅ None | No |
