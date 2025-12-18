@@ -230,6 +230,54 @@ Skills are modular knowledge bases that Claude loads when needed. They provide:
 
 ---
 
+### dev-browser
+**Purpose:** Enterprise-grade browser automation with persistent page state, inspired by PAIML and Probar patterns
+
+**Files:** Main skill (~580 lines) + 3 resource files + source files
+
+**Covers:**
+- Persistent Playwright browser server
+- ARIA accessibility snapshots for element discovery
+- **GUI Coverage Tracking** (from Probar) - Track element/screen test coverage
+- **Visual Regression Testing** - Screenshot comparison with baselines
+- **Accessibility Auditing** - WCAG 2.1 AA compliance checks
+- **Soft Assertions with Retry** - Handle flaky tests gracefully
+- **Workflow Playbooks** - State machine definitions for complex flows
+- **Quality Metrics Dashboard** - PAIML-style scoring (A+ to F grades)
+- **Falsifiable Commitments** - Performance guarantees with measurements
+
+**Use when:**
+- Testing running web applications
+- Visual regression testing
+- Accessibility audits (WCAG, keyboard, screen reader)
+- E2E testing with coverage tracking
+- Performance profiling (Core Web Vitals)
+- Stripe-level UI quality checks
+
+**Setup:**
+```bash
+cd .claude/skills/dev-browser && ./server.sh &
+```
+
+**Customization:** ✅ None - works with any web application
+
+**Key Features:**
+- Pages persist between script executions
+- LLM-optimized output formats
+- GUI coverage tracking with thresholds
+- WCAG accessibility auditing
+- Visual regression with baselines
+- Quality grades (A+ to F)
+
+**Resource Files:**
+- [advanced-patterns.md](dev-browser/resources/advanced-patterns.md) - Fuzzing, replay, network interception
+- [visual-testing.md](dev-browser/resources/visual-testing.md) - Regression, themes, animations
+- [accessibility-guide.md](dev-browser/resources/accessibility-guide.md) - WCAG audit, keyboard, screen reader
+
+**[View Skill →](dev-browser/)**
+
+---
+
 ### production-hardening-backend
 **Purpose:** Enterprise-grade production hardening for Rust backend services
 

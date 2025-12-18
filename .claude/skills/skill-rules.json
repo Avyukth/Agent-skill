@@ -967,6 +967,92 @@
                 ]
             }
         },
+        "dev-browser": {
+            "type": "domain",
+            "enforcement": "suggest",
+            "priority": "high",
+            "description": "Browser automation with persistent page state using Playwright. Features GUI coverage tracking, visual regression testing, accessibility auditing (WCAG), workflow playbooks, and quality metrics. Inspired by PAIML and Probar patterns.",
+            "promptTriggers": {
+                "keywords": [
+                    "browser",
+                    "navigate",
+                    "click",
+                    "fill form",
+                    "screenshot",
+                    "scrape",
+                    "automate browser",
+                    "test website",
+                    "test the ui",
+                    "check the ui",
+                    "login to",
+                    "log into",
+                    "open browser",
+                    "web automation",
+                    "playwright",
+                    "dev-browser",
+                    "localhost",
+                    "test the app",
+                    "verify the frontend",
+                    "interact with the page",
+                    "visual regression",
+                    "accessibility audit",
+                    "a11y",
+                    "wcag",
+                    "gui coverage",
+                    "test coverage ui",
+                    "ui testing",
+                    "e2e test",
+                    "end to end",
+                    "keyboard navigation",
+                    "screen reader",
+                    "color blindness",
+                    "responsive test",
+                    "mobile test",
+                    "viewport test",
+                    "core web vitals",
+                    "performance audit",
+                    "stripe level ui",
+                    "world class ui",
+                    "design quality"
+                ],
+                "intentPatterns": [
+                    "(go to|navigate to|open|visit).*?(url|website|page|localhost)",
+                    "(click|press|tap).*?(button|link|element)",
+                    "(fill|enter|type|input).*?(form|field|text)",
+                    "(take|capture|get).*?screenshot",
+                    "(scrape|extract|get).*?(data|content|text).*?(from|on).*?(page|website)",
+                    "(automate|test|verify|check).*?(browser|website|web app|frontend|ui)",
+                    "(interact with|use).*?(browser|page|website)",
+                    "(visual|screenshot).*?regression",
+                    "(accessibility|a11y|wcag).*?(audit|check|test)",
+                    "(keyboard|screen reader).*?(test|navigation)",
+                    "(gui|ui|test).*?coverage",
+                    "(responsive|mobile|viewport).*?(test|check)"
+                ]
+            },
+            "fileTriggers": {
+                "pathPatterns": [
+                    "**/*.tsx",
+                    "**/*.jsx",
+                    "**/*.svelte",
+                    "**/*.vue",
+                    "**/playwright.config.*",
+                    "**/*.spec.ts",
+                    "**/*.test.ts",
+                    "**/*.e2e.ts"
+                ],
+                "contentPatterns": [
+                    "localhost:\\d+",
+                    "127\\.0\\.0\\.1:\\d+",
+                    "test\\(.*browser",
+                    "page\\.goto",
+                    "page\\.click",
+                    "aria-label",
+                    "data-testid",
+                    "role=.*button"
+                ]
+            }
+        },
         "git-workflow-mastery": {
             "type": "domain",
             "enforcement": "suggest",

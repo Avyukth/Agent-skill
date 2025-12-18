@@ -107,11 +107,28 @@ Which would you prefer?
 - Implementing task expansion logic
 - Analyzing task complexity
 
+### Browser Automation Skills
+
+**dev-browser requires:**
+- Bun runtime (v1.0 or later)
+- Works with any web application (localhost or remote)
+
+**Before integrating, ask:**
+"Do you need to automate browser interactions or test web UIs?"
+
+**Use when:**
+- Testing running web applications
+- Automating form filling, clicking, navigation
+- Taking screenshots for visual verification
+- Scraping web data
+- Testing frontend changes visually
+
 ### Skills That Are Tech-Agnostic
 
 These work for ANY tech stack:
 - ✅ **skill-developer** - Meta-skill, no tech requirements
 - ✅ **task-master-prompts** - AI prompt engineering, works with any LLM
+- ✅ **dev-browser** - Browser automation, works with any web app
 - ✅ **paiml-mcp-toolkit** - PMAT works with 17+ languages (Rust, TypeScript, Python, etc.)
 - ✅ **route-tester** - Only requires JWT cookie auth (framework agnostic)
 - ✅ **error-tracking** - Sentry works with most stacks
@@ -295,6 +312,22 @@ cat $CLAUDE_PROJECT_DIR/.claude/skills/skill-rules.json | jq .
 - **Copy as-is** - prompt engineering patterns are framework-agnostic
 - **Use when:** Building task breakdown systems, AI agents, PRD parsing
 - **Covers:** Handlebars templates, JSON schema, complexity analysis, research mode
+
+#### dev-browser
+- **Tech Requirements:** Bun runtime v1.0+
+- **Ask:** "Need browser automation?" "Visual regression testing?" "Accessibility audits?"
+- **Customize:** None needed - works with any web application
+- **Features (inspired by PAIML/Probar):**
+  - GUI Coverage Tracking (element/screen test coverage)
+  - Visual Regression Testing (screenshot comparison)
+  - Accessibility Auditing (WCAG 2.1 AA compliance)
+  - Soft Assertions with Retry (flaky test handling)
+  - Workflow Playbooks (state machine definitions)
+  - Quality Metrics Dashboard (A+ to F grades)
+  - Falsifiable Commitments (performance guarantees)
+- **Setup:** Run `cd .claude/skills/dev-browser && ./server.sh &` to start
+- **Key feature:** Persistent page state + enterprise testing capabilities
+- **Resource files:** advanced-patterns.md, visual-testing.md, accessibility-guide.md
 
 #### sveltekit-pwa-skills
 - **Tech Requirements:** SvelteKit 2.0+, Vite
@@ -959,6 +992,7 @@ Try editing a .vue file - the skill should activate.
 |-----------|------------------|--------------|-------------|
 | **skill-developer** | None | ✅ None | Copy as-is |
 | **task-master-prompts** | None | ✅ None | Copy as-is |
+| **dev-browser** | Bun v1.0+ | ✅ None | "Visual regression?" "A11y audit?" |
 | **backend-dev-guidelines** | Express/Prisma/Node | ⚠️ Paths + tech check | "Use Express/Prisma?" "Where's backend?" |
 | **frontend-dev-guidelines** | React/MUI v7 | ⚠️⚠️ Paths + framework | "Use React/MUI v7?" "Where's frontend?" |
 | **rust-skills** | Rust/Axum/SQLx | ⚠️ Paths | "Use Rust with Axum?" "Where's Rust code?" |

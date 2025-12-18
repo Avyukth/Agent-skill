@@ -52,6 +52,7 @@ Browse the [skills catalog](.claude/skills/) and copy what you need.
 - **kaizen-solaris-review** - Toyota Way code review for Rust
 - **sveltekit-pwa-skills** - SvelteKit PWA with offline support
 - **task-master-prompts** - AI task management prompt engineering
+- **dev-browser** - Browser automation with visual regression, accessibility auditing, GUI coverage (PAIML/Probar patterns)
 - **skill-developer** - Meta-skill for creating skills
 - **route-tester** - Test authenticated API routes
 - **error-tracking** - Sentry integration patterns
@@ -166,6 +167,7 @@ dev/
 | [**sveltekit-pwa-skills**](.claude/skills/sveltekit-pwa-skills/) | ~360 | PWA, offline, push notifications | SvelteKit PWA |
 | [**deploy-pulumi-argocd-canary**](.claude/skills/deploy-pulumi-argocd-canary/) | ~480 | Pulumi Go, ArgoCD, canary releases | K8s Deployment |
 | [**task-master-prompts**](.claude/skills/task-master-prompts/) | ~300 | PRD parsing, task expansion, complexity | AI Task Management |
+| [**dev-browser**](.claude/skills/dev-browser/) | ~580 | Visual regression, a11y audit, GUI coverage | Web Testing/Quality |
 | [**route-tester**](.claude/skills/route-tester/) | 389 | Testing authenticated routes | API testing |
 | [**error-tracking**](.claude/skills/error-tracking/) | ~250 | Sentry integration | Error monitoring |
 
