@@ -132,6 +132,7 @@ These work for ANY tech stack:
 - ✅ **paiml-mcp-toolkit** - PMAT works with 17+ languages (Rust, TypeScript, Python, etc.)
 - ✅ **route-tester** - Only requires JWT cookie auth (framework agnostic)
 - ✅ **error-tracking** - Sentry works with most stacks
+- ✅ **shadcn-ui** - Works with any framework (React, Solid, Leptos, Vue, etc.)
 
 ---
 
@@ -312,6 +313,15 @@ cat $CLAUDE_PROJECT_DIR/.claude/skills/skill-rules.json | jq .
 - **Copy as-is** - prompt engineering patterns are framework-agnostic
 - **Use when:** Building task breakdown systems, AI agents, PRD parsing
 - **Covers:** Handlebars templates, JSON schema, complexity analysis, research mode
+
+#### shadcn-ui
+- **Tech Requirements:** Tailwind CSS (any framework works)
+- **Ask:** "What framework are you using?" "Need shadcn-style components?"
+- **Copy as-is** - works with React, Solid, Leptos (Rust), Vue, or any framework
+- **Use when:** Building UI components with shadcn patterns
+- **Covers:** CVA variants, design tokens, accessibility patterns, framework translations
+- **Example paths:** `**/components/ui/**/*.tsx`, `**/ui/**/*.rs`
+- **Adaptation tip:** Use template.md to add support for new frameworks
 
 #### dev-browser
 - **Tech Requirements:** Bun runtime v1.0+
@@ -992,6 +1002,7 @@ Try editing a .vue file - the skill should activate.
 |-----------|------------------|--------------|-------------|
 | **skill-developer** | None | ✅ None | Copy as-is |
 | **task-master-prompts** | None | ✅ None | Copy as-is |
+| **shadcn-ui** | Tailwind CSS | ✅ None | "What framework?" "shadcn components?" |
 | **dev-browser** | Bun v1.0+ | ✅ None | "Visual regression?" "A11y audit?" |
 | **backend-dev-guidelines** | Express/Prisma/Node | ⚠️ Paths + tech check | "Use Express/Prisma?" "Where's backend?" |
 | **frontend-dev-guidelines** | React/MUI v7 | ⚠️⚠️ Paths + framework | "Use React/MUI v7?" "Where's frontend?" |

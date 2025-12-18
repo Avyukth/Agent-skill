@@ -1053,6 +1053,78 @@
                 ]
             }
         },
+        "shadcn-ui": {
+            "type": "domain",
+            "enforcement": "suggest",
+            "priority": "high",
+            "description": "Universal shadcn/ui component generator for ANY framework including React, Solid, Leptos (Rust/WASM), Vue, Svelte. Translates shadcn design principles, CVA variants, accessibility patterns, and Tailwind styling.",
+            "promptTriggers": {
+                "keywords": [
+                    "shadcn",
+                    "shadcn-ui",
+                    "shadcn/ui",
+                    "radix ui",
+                    "radix primitives",
+                    "tailwind components",
+                    "ui components",
+                    "cva",
+                    "class variance authority",
+                    "accessible components",
+                    "component library",
+                    "button variants",
+                    "dialog component",
+                    "modal component",
+                    "card component",
+                    "input component",
+                    "form components",
+                    "design tokens",
+                    "design system",
+                    "tailwind merge",
+                    "cn utility",
+                    "leptos ui",
+                    "rust ui components",
+                    "wasm frontend",
+                    "kobalte",
+                    "radix-leptos",
+                    "solid ui"
+                ],
+                "intentPatterns": [
+                    "(create|build|make|generate|implement).*?(shadcn|ui|component|button|card|dialog|modal|form)",
+                    "(translate|convert|port).*?(shadcn|react|component).*?(leptos|solid|rust|wasm)",
+                    "(how to|how do I).*?(shadcn|tailwind|cva|variant|accessible)",
+                    "(style|design).*?(component|button|card|form|input).*?(tailwind|shadcn)",
+                    "(add|implement|setup).*?(dark mode|light mode|theme|design tokens)",
+                    "(make|ensure|add).*?(accessible|aria|keyboard navigation).*?(component|ui)"
+                ]
+            },
+            "fileTriggers": {
+                "pathPatterns": [
+                    "**/components/ui/**/*.tsx",
+                    "**/components/ui/**/*.jsx",
+                    "**/components/ui/**/*.rs",
+                    "**/components/ui/**/*.svelte",
+                    "**/components/ui/**/*.vue",
+                    "**/ui/**/*.tsx",
+                    "**/lib/utils.ts",
+                    "**/globals.css",
+                    "**/app.css"
+                ],
+                "contentPatterns": [
+                    "class-variance-authority",
+                    "cva\\(",
+                    "@radix-ui",
+                    "tailwind-merge",
+                    "twMerge\\(",
+                    "clsx\\(",
+                    "cn\\(",
+                    "--primary",
+                    "--foreground",
+                    "--background",
+                    "tailwind_fuse",
+                    "radix_leptos_"
+                ]
+            }
+        },
         "git-workflow-mastery": {
             "type": "domain",
             "enforcement": "suggest",

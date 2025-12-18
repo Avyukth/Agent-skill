@@ -278,6 +278,52 @@ cd .claude/skills/dev-browser && ./server.sh &
 
 ---
 
+### shadcn-ui
+**Purpose:** Universal shadcn/ui component generator for ANY framework
+
+**Files:** Main skill + 7 resource files + CSS assets
+
+**Covers:**
+- shadcn/ui design principles and patterns
+- CVA (Class Variance Authority) variant patterns
+- Tailwind CSS styling with design tokens
+- Accessibility-first components (ARIA, keyboard nav)
+- Framework translations (React, Solid, Leptos/Rust)
+- Dark/light theme systems
+- 40+ component specifications
+
+**Use when:**
+- Building UI components with shadcn patterns
+- Translating React components to other frameworks
+- Creating component libraries with Tailwind
+- Implementing accessible components with ARIA
+- Working with Leptos/Rust WASM frontends
+- Setting up design tokens and themes
+
+**Framework Support:**
+| Framework | Status | Reference |
+|-----------|--------|-----------|
+| React | Native (original) | react.md |
+| SolidJS | Full translation | solid.md |
+| Leptos (Rust) | Full translation | leptos.md |
+| Other | Template provided | template.md |
+
+**Customization:** ✅ None - works with any framework using Tailwind CSS
+
+**Resource Files:**
+- [design-system.md](shadcn-ui/resources/design-system.md) - Color tokens, typography, spacing
+- [component-anatomy.md](shadcn-ui/resources/component-anatomy.md) - 40+ component specs
+- [accessibility-patterns.md](shadcn-ui/resources/accessibility-patterns.md) - ARIA, keyboard nav
+- [react.md](shadcn-ui/resources/framework-translations/react.md) - Original implementation
+- [solid.md](shadcn-ui/resources/framework-translations/solid.md) - SolidJS with Kobalte
+- [leptos.md](shadcn-ui/resources/framework-translations/leptos.md) - Rust/WASM translation
+- [template.md](shadcn-ui/resources/framework-translations/template.md) - New framework template
+- [globals.css](shadcn-ui/assets/base-css/globals.css) - Base CSS variables
+
+**[View Skill →](shadcn-ui/)**
+
+---
+
 ### production-hardening-backend
 **Purpose:** Enterprise-grade production hardening for Rust backend services
 
