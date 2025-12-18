@@ -4,9 +4,46 @@ Complete design token reference for generating consistent shadcn-style component
 
 ## Color System
 
-### Semantic Color Tokens
+### OKLCH Color Space (Modern)
 
-shadcn uses HSL values with CSS custom properties. All colors have foreground pairs.
+shadcn now uses **OKLCH** for perceptually uniform colors. This provides better color interpolation and consistent perceived brightness.
+
+```css
+:root {
+  /* Core theme colors (OKLCH) */
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --border: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --radius: 0.625rem;
+
+  /* Chart-specific palette */
+  --chart-1: oklch(0.646 0.222 41.116);  /* Orange */
+  --chart-2: oklch(0.6 0.118 184.704);   /* Teal */
+  --chart-3: oklch(0.398 0.07 227.392);  /* Dark blue */
+  --chart-4: oklch(0.828 0.189 84.429);  /* Yellow */
+  --chart-5: oklch(0.769 0.188 70.08);   /* Amber */
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --chart-1: oklch(0.488 0.243 264.376); /* Blue/Purple */
+  --chart-2: oklch(0.696 0.17 162.48);   /* Green */
+  /* ... other dark theme colors */
+}
+```
+
+**Chart Color Usage:**
+Colors are referenced via `var(--color-KEY)` where KEY matches `ChartConfig` object keys, enabling dynamic color binding.
+
+### Semantic Color Tokens (HSL - Legacy)
+
+Traditional HSL values with CSS custom properties. All colors have foreground pairs.
 
 ```css
 /* Light theme defaults */
@@ -112,7 +149,20 @@ font-normal   → 400
 font-medium   → 500
 font-semibold → 600
 font-bold     → 700
+font-extrabold → 800
 ```
+
+### Typography Scale
+
+| Element | Classes | Usage |
+|---------|---------|-------|
+| H1 | `text-4xl font-extrabold tracking-tight` | Page titles |
+| H2 | `text-3xl font-semibold tracking-tight` | Section heads |
+| H3 | `text-2xl font-semibold tracking-tight` | Subsections |
+| H4 | `text-xl font-semibold tracking-tight` | Card titles |
+| Body | `text-sm leading-7` | Primary content |
+| Muted | `text-sm text-muted-foreground` | Descriptions |
+| Chart labels | `text-xs` | Axis labels |
 
 ## Spacing Scale
 
@@ -139,16 +189,34 @@ shadcn follows Tailwind's spacing scale:
 ## Border Radius
 
 ```css
---radius: 0.5rem; /* Base radius token */
+--radius: 0.625rem;  /* 10px base */
+--radius-sm: calc(var(--radius) - 4px);  /* 6px - badges */
+--radius-md: calc(var(--radius) - 2px);  /* 8px - buttons, inputs */
+--radius-lg: var(--radius);               /* 10px - cards */
+--radius-xl: calc(var(--radius) + 4px);  /* 14px - dialogs */
 ```
 
 Usage in Tailwind:
 ```
-rounded-lg   → var(--radius) /* Default for most components */
-rounded-md   → calc(var(--radius) - 2px)
-rounded-sm   → calc(var(--radius) - 4px)
+rounded-sm   → var(--radius-sm) /* badges, tags */
+rounded-md   → var(--radius-md) /* buttons, inputs */
+rounded-lg   → var(--radius-lg) /* cards, panels */
+rounded-xl   → var(--radius-xl) /* dialogs, modals */
 rounded-full → 9999px
 ```
+
+## Spacing Conventions
+
+| Context | Tailwind Class | Value |
+|---------|---------------|-------|
+| Icon buttons | `p-2` | 8px |
+| Compact cards | `p-3` | 12px |
+| Standard components | `p-4` | 16px |
+| Card content | `p-6` | 24px |
+| Input fields | `px-3 py-2` | 12px/8px |
+| Button default | `px-4 py-2` | 16px/8px |
+| Form groups | `gap-4` | 16px |
+| Major sections | `gap-6` | 24px |
 
 ## Shadows
 
@@ -160,6 +228,16 @@ shadow-lg   → 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.
 ```
 
 ## Animation & Transitions
+
+### Animation Timing
+
+| Context | Duration | Easing |
+|---------|----------|--------|
+| Color transitions | `duration-150` | `transition-colors` |
+| Standard interactions | `duration-200` | `ease-out` |
+| Accordion/collapse | `duration-300` | `ease-in-out` |
+| Modal enter | `duration-200` | `ease-out` |
+| Modal exit | `duration-150` | `ease-in` |
 
 ### Duration
 ```
@@ -175,6 +253,8 @@ ease-in-out → cubic-bezier(0.4, 0, 0.2, 1) /* Default */
 ease-out    → cubic-bezier(0, 0, 0.2, 1)   /* Enter animations */
 ease-in     → cubic-bezier(0.4, 0, 1, 1)   /* Exit animations */
 ```
+
+**Note:** Charts use `accessibilityLayer` prop for keyboard navigation and screen reader support.
 
 ### Common Animations (Keyframes)
 ```css

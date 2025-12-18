@@ -1057,7 +1057,7 @@
             "type": "domain",
             "enforcement": "suggest",
             "priority": "high",
-            "description": "Universal shadcn/ui component generator for ANY framework including React, Solid, Leptos (Rust/WASM), Vue, Svelte. Translates shadcn design principles, CVA variants, accessibility patterns, and Tailwind styling.",
+            "description": "Universal shadcn/ui component generator for ANY framework including React, Solid, Leptos (Rust/WASM), Vue, Svelte. Covers components, charts (Area, Bar, Line, Pie, Radar), dashboards, sidebars, login blocks, and design tokens (OKLCH).",
             "promptTriggers": {
                 "keywords": [
                     "shadcn",
@@ -1086,7 +1086,23 @@
                     "wasm frontend",
                     "kobalte",
                     "radix-leptos",
-                    "solid ui"
+                    "solid ui",
+                    "recharts",
+                    "area chart",
+                    "bar chart",
+                    "line chart",
+                    "pie chart",
+                    "radar chart",
+                    "radial chart",
+                    "chart config",
+                    "sidebar component",
+                    "dashboard layout",
+                    "login page",
+                    "login block",
+                    "stats card",
+                    "leptos-chartistry",
+                    "charming chart",
+                    "oklch"
                 ],
                 "intentPatterns": [
                     "(create|build|make|generate|implement).*?(shadcn|ui|component|button|card|dialog|modal|form)",
@@ -1094,7 +1110,10 @@
                     "(how to|how do I).*?(shadcn|tailwind|cva|variant|accessible)",
                     "(style|design).*?(component|button|card|form|input).*?(tailwind|shadcn)",
                     "(add|implement|setup).*?(dark mode|light mode|theme|design tokens)",
-                    "(make|ensure|add).*?(accessible|aria|keyboard navigation).*?(component|ui)"
+                    "(make|ensure|add).*?(accessible|aria|keyboard navigation).*?(component|ui)",
+                    "(create|build|add).*?(chart|graph|visualization|dashboard)",
+                    "(implement|build).*?(sidebar|navigation|layout)",
+                    "(create|build).*?(login|auth|signin).*?(page|form|block)"
                 ]
             },
             "fileTriggers": {
@@ -1107,7 +1126,10 @@
                     "**/ui/**/*.tsx",
                     "**/lib/utils.ts",
                     "**/globals.css",
-                    "**/app.css"
+                    "**/app.css",
+                    "**/components/charts/**/*",
+                    "**/components/sidebar/**/*",
+                    "**/components/dashboard/**/*"
                 ],
                 "contentPatterns": [
                     "class-variance-authority",
@@ -1121,7 +1143,14 @@
                     "--foreground",
                     "--background",
                     "tailwind_fuse",
-                    "radix_leptos_"
+                    "radix_leptos_",
+                    "--chart-1",
+                    "--chart-2",
+                    "ChartConfig",
+                    "ChartContainer",
+                    "leptos_chartistry",
+                    "SidebarProvider",
+                    "useSidebar"
                 ]
             }
         },

@@ -1,6 +1,6 @@
 ---
 name: shadcn-ui
-description: Generate shadcn/ui-style components for ANY framework. Use when building UI components in React, Solid, Svelte, Vue, Leptos (Rust/WASM), or any other framework where shadcn-style design is desired. Handles both supported frameworks and provides framework-agnostic patterns for unsupported targets like Rust/WASM (Leptos, Dioxus, Yew), Elixir (Phoenix LiveView), or custom solutions. Translates shadcn design principles (Radix primitives, Tailwind styling, accessibility-first) into any target. Covers CVA variants, class merging, component anatomy, accessibility patterns, and design tokens.
+description: Generate shadcn/ui-style components for ANY framework. Use when building UI components, charts, dashboards, or layouts in React, Solid, Svelte, Vue, Leptos (Rust/WASM). Covers CVA variants, class merging, component anatomy, accessibility patterns, design tokens (OKLCH), chart system (Area, Bar, Line, Pie, Radar), sidebar blocks, login patterns, and dashboard layouts. Includes Rust chart library recommendations (leptos-chartistry, charming).
 ---
 
 # shadcn/ui Universal Component Generator
@@ -26,6 +26,10 @@ This skill automatically activates when you:
 - Work with Leptos/Rust WASM frontends needing UI components
 - Need CVA (Class Variance Authority) variant patterns
 - Design dark/light theme systems
+- Build charts (Area, Bar, Line, Pie, Radar, Radial)
+- Create dashboard layouts with sidebars
+- Implement login/auth page patterns
+- Need calendar/date picker components
 
 ## Core Philosophy
 
@@ -146,6 +150,8 @@ pub fn Button(
 | Understand color tokens, spacing, typography | [resources/design-system.md](resources/design-system.md) |
 | Get component structure and classes | [resources/component-anatomy.md](resources/component-anatomy.md) |
 | Implement proper ARIA and keyboard nav | [resources/accessibility-patterns.md](resources/accessibility-patterns.md) |
+| Build charts (Area, Bar, Line, Pie, Radar) | [resources/charts-and-blocks.md](resources/charts-and-blocks.md) |
+| Build dashboard layouts and sidebars | [resources/charts-and-blocks.md](resources/charts-and-blocks.md) |
 | Build React components (original) | [resources/framework-translations/react.md](resources/framework-translations/react.md) |
 | Build Leptos/Rust components | [resources/framework-translations/leptos.md](resources/framework-translations/leptos.md) |
 | Build SolidJS components | [resources/framework-translations/solid.md](resources/framework-translations/solid.md) |
@@ -211,6 +217,16 @@ ARIA and keyboard patterns for all components:
 - Focus management patterns
 - Screen reader considerations
 
+### [resources/charts-and-blocks.md](resources/charts-and-blocks.md)
+Chart system architecture and dashboard blocks:
+- ChartContainer and ChartConfig patterns
+- Area, Bar, Line, Pie, Radar, Radial charts
+- Sidebar system (16 variants)
+- Login block patterns (5 variants)
+- Dashboard layout composition
+- Rust chart library recommendations (leptos-chartistry, charming)
+- Calendar implementation patterns
+
 ### Framework Translation Guides
 - **[react.md](resources/framework-translations/react.md)** - Original React/Radix implementation reference
 - **[leptos.md](resources/framework-translations/leptos.md)** - Comprehensive Rust/WASM translation with radix-leptos-* crates
@@ -238,6 +254,6 @@ A well-generated shadcn-style component should:
 ---
 
 **Skill Status**: Complete universal shadcn/ui generator
-**Line Count**: <200 lines (under 500-line rule)
-**Progressive Disclosure**: 8 resource files for deep dives
-**Coverage**: Full component library translation capability
+**Line Count**: <250 lines (under 500-line rule)
+**Progressive Disclosure**: 9 resource files for deep dives
+**Coverage**: Full component library + charts + dashboard blocks
