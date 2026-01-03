@@ -50,3 +50,7 @@ temp/
 .env
 prisma/.env
 .claude/skills/dev-browser/.browser-data/
+
+# Local development/backup
+claude-bkp/
+new-skill/
