@@ -53,6 +53,8 @@ Browse the [skills catalog](.claude/skills/) and copy what you need.
 - **sveltekit-pwa-skills** - SvelteKit PWA with offline support
 - **task-master-prompts** - AI task management prompt engineering
 - **dev-browser** - Browser automation with visual regression, accessibility auditing, GUI coverage (PAIML/Probar patterns)
+- **gastown** - Multi-agent orchestration with convoys, polecats, molecules/formulas
+- **beads** - Git-native issue tracking for AI agent workflows
 - **skill-developer** - Meta-skill for creating skills
 - **route-tester** - Test authenticated API routes
 - **error-tracking** - Sentry integration patterns
@@ -118,10 +120,20 @@ skill-name/
 
 ```
 .claude/
-├── skills/                 # 5 production skills
+├── skills/                 # 17+ production skills
 │   ├── backend-dev-guidelines/  (12 resource files)
 │   ├── frontend-dev-guidelines/ (11 resource files)
+│   ├── rust-skills/             (16 resource files)
+│   ├── gastown/                 (5 resource files) - Multi-agent orchestration
+│   ├── beads/                   (6 resource files) - Git-native issue tracking
+│   ├── dev-browser/             (3 resource files) - Browser automation
+│   ├── shadcn-ui/               (5 resource files) - Universal UI components
 │   ├── skill-developer/         (7 resource files)
+│   ├── kaizen-solaris-review/   (6 resource files)
+│   ├── production-hardening-*/  (Backend + Frontend)
+│   ├── sveltekit-pwa-skills/
+│   ├── task-master-prompts/
+│   ├── deploy-pulumi-argocd-canary/
 │   ├── route-tester/
 │   ├── error-tracking/
 │   └── skill-rules.json    # Skill activation configuration
@@ -132,15 +144,15 @@ skill-name/
 │   └── trigger-build-resolver.sh  (optional)
 ├── agents/                 # 11 specialized agents
 │   ├── code-architecture-reviewer.md
-│   ├── design-review.md         (NEW)
+│   ├── design-review.md
 │   ├── refactor-planner.md
 │   ├── frontend-error-fixer.md
 │   └── ... 7 more
 └── commands/               # 6 slash commands
     ├── dev-docs.md
-    ├── review.md                (NEW)
-    ├── security-review.md       (NEW)
-    ├── design-review.md         (NEW)
+    ├── review.md
+    ├── security-review.md
+    ├── design-review.md
     └── ...
 
 dev/
@@ -152,7 +164,7 @@ dev/
 
 ## Component Catalog
 
-### 🎨 Skills (15+)
+### 🎨 Skills (17+)
 
 | Skill | Lines | Purpose | Best For |
 |-------|-------|---------|----------|
@@ -168,6 +180,8 @@ dev/
 | [**deploy-pulumi-argocd-canary**](.claude/skills/deploy-pulumi-argocd-canary/) | ~480 | Pulumi Go, ArgoCD, canary releases | K8s Deployment |
 | [**task-master-prompts**](.claude/skills/task-master-prompts/) | ~300 | PRD parsing, task expansion, complexity | AI Task Management |
 | [**dev-browser**](.claude/skills/dev-browser/) | ~580 | Visual regression, a11y audit, GUI coverage | Web Testing/Quality |
+| [**gastown**](.claude/skills/gastown/) | ~320 | Multi-agent orchestration, convoys, polecats | AI Agent Coordination |
+| [**beads**](.claude/skills/beads/) | ~350 | Git-native issue tracking, dependencies | AI Workflow Tracking |
 | [**route-tester**](.claude/skills/route-tester/) | 389 | Testing authenticated routes | API testing |
 | [**error-tracking**](.claude/skills/error-tracking/) | ~250 | Sentry integration | Error monitoring |
 

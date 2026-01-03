@@ -278,6 +278,103 @@ cd .claude/skills/dev-browser && ./server.sh &
 
 ---
 
+### gastown
+**Purpose:** Multi-agent orchestration for Claude Code using Gas Town (gt)
+
+**Files:** Main skill + 5 resource files
+
+**Covers:**
+- Convoy management for batched agent work
+- Polecat agent lifecycle (spawn, handoff, shutdown)
+- Molecules/formulas for structured workflows (MEOW)
+- Mayor/Witness/Refinery role taxonomy
+- Git worktree isolation for parallel agent work
+- tmux session management
+- Beads integration for issue tracking
+
+**Use when:**
+- Coordinating 4+ Claude agents in parallel
+- Tracking batched work with convoys
+- Implementing multi-step workflows with molecules
+- Managing agent lifecycle (spawn, handoff, shutdown)
+- Need git-isolated workspaces for parallel agent edits
+
+**Key Commands:**
+```bash
+gt install          # Install Gas Town
+gt start            # Start mayor daemon
+gt prime            # Initialize convoy
+gt convoy           # List active convoys
+gt sling <issue>    # Assign work to polecat
+gt mail             # Check mailbox for results
+gt handoff          # Transfer work between agents
+```
+
+**Customization:** ✅ None - works with any Claude Code project
+
+**Requirements:** Go 1.23+, Git 2.25+, beads (bd), tmux 3.0+
+
+**Resource Files:**
+- [quick-start.md](gastown/resources/quick-start.md) - Setup guide
+- [commands-reference.md](gastown/resources/commands-reference.md) - gt/bd CLI reference
+- [roles-and-agents.md](gastown/resources/roles-and-agents.md) - Agent role taxonomy
+- [molecules-formulas.md](gastown/resources/molecules-formulas.md) - MEOW workflow system
+- [troubleshooting.md](gastown/resources/troubleshooting.md) - Common issues
+
+**[View Skill →](gastown/)**
+
+---
+
+### beads
+**Purpose:** Git-native issue tracking for AI agent workflows
+
+**Files:** Main skill + 6 resource files
+
+**Covers:**
+- Issue lifecycle (create, update, close)
+- Dependency tracking between tasks
+- Priority management (0-4 scale)
+- Git sync for distributed tracking
+- JSONL storage format
+- Molecules/formulas for structured work
+- Integration with Gas Town, Linear, Jira
+
+**Use when:**
+- Tracking issues that survive agent context compaction
+- Managing dependencies between tasks
+- Finding ready work (unblocked issues)
+- Syncing work state via git commits
+- Coordinating multi-agent work
+- Need persistent memory across sessions
+
+**Key Commands:**
+```bash
+bd init             # Initialize .beads/ directory
+bd create "Task"    # Create new issue
+bd ready --json     # Find unblocked work
+bd update <id> -s in_progress  # Update status
+bd close <id>       # Complete issue
+bd sync             # Sync via git
+bd dep <child> <parent>  # Add dependency
+bd mol              # Run molecule workflow
+```
+
+**Customization:** ✅ None - works with any git repository
+
+**Requirements:** Go 1.23+, Git
+
+**Resource Files:**
+- [commands-reference.md](beads/resources/commands-reference.md) - bd CLI reference
+- [entity-model.md](beads/resources/entity-model.md) - Data structures
+- [sync-and-storage.md](beads/resources/sync-and-storage.md) - Git sync, JSONL format
+- [integrations.md](beads/resources/integrations.md) - MCP, Linear, Jira, Gas Town
+- [molecules-formulas.md](beads/resources/molecules-formulas.md) - Structured workflows
+- [troubleshooting.md](beads/resources/troubleshooting.md) - Common issues
+
+**[View Skill →](beads/)**
+
+---
+
 ### shadcn-ui
 **Purpose:** Universal shadcn/ui component generator for ANY framework
 

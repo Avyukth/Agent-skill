@@ -123,6 +123,44 @@ Which would you prefer?
 - Scraping web data
 - Testing frontend changes visually
 
+### Multi-Agent Orchestration Skills
+
+**gastown requires:**
+- Go 1.23+
+- Git 2.25+ (for worktree support)
+- beads (bd) CLI
+- tmux 3.0+ (recommended)
+- Claude Code CLI
+
+**Before integrating, ask:**
+"Do you need to coordinate multiple AI agents?"
+
+**Use when:**
+- Running 4+ Claude agents in parallel
+- Tracking batched work with convoys
+- Implementing multi-step workflows with molecules
+- Managing agent lifecycle (spawn, handoff, shutdown)
+
+**Related:** Works with beads for issue tracking
+
+### Issue Tracking Skills
+
+**beads requires:**
+- Go 1.23+
+- Git (for sync)
+
+**Before integrating, ask:**
+"Do you need git-native issue tracking for AI workflows?"
+
+**Use when:**
+- Tracking issues that survive agent context compaction
+- Managing dependencies between tasks
+- Finding ready work (unblocked issues)
+- Syncing work state via git
+- Coordinating multi-agent work
+
+**Related:** Integrates with Gas Town for orchestration
+
 ### Skills That Are Tech-Agnostic
 
 These work for ANY tech stack:
@@ -130,6 +168,8 @@ These work for ANY tech stack:
 - ✅ **task-master-prompts** - AI prompt engineering, works with any LLM
 - ✅ **dev-browser** - Browser automation, works with any web app
 - ✅ **paiml-mcp-toolkit** - PMAT works with 17+ languages (Rust, TypeScript, Python, etc.)
+- ✅ **gastown** - Multi-agent orchestration, works with any Claude Code project
+- ✅ **beads** - Git-native issue tracking, works with any git repository
 - ✅ **route-tester** - Only requires JWT cookie auth (framework agnostic)
 - ✅ **error-tracking** - Sentry works with most stacks
 - ✅ **shadcn-ui** - Works with any framework (React, Solid, Leptos, Vue, etc.)
@@ -338,6 +378,24 @@ cat $CLAUDE_PROJECT_DIR/.claude/skills/skill-rules.json | jq .
 - **Setup:** Run `cd .claude/skills/dev-browser && ./server.sh &` to start
 - **Key feature:** Persistent page state + enterprise testing capabilities
 - **Resource files:** advanced-patterns.md, visual-testing.md, accessibility-guide.md
+
+#### gastown
+- **Tech Requirements:** Go 1.23+, Git 2.25+, beads (bd), tmux 3.0+
+- **Ask:** "Need multi-agent coordination?" "Running multiple Claude agents?"
+- **Copy as-is** - works with any Claude Code project
+- **Use when:** Coordinating 4+ agents, tracking convoys, managing agent lifecycle
+- **Key commands:** `gt install`, `gt start`, `gt prime`, `gt convoy`, `gt sling`
+- **Integrates with:** beads for issue tracking
+- **Resource files:** quick-start.md, commands-reference.md, roles-and-agents.md, molecules-formulas.md
+
+#### beads
+- **Tech Requirements:** Go 1.23+, Git
+- **Ask:** "Need git-native issue tracking?" "Track work across agent sessions?"
+- **Copy as-is** - works with any git repository
+- **Use when:** Tracking issues that survive compaction, finding ready work, syncing via git
+- **Key commands:** `bd init`, `bd create`, `bd ready`, `bd sync`, `bd close`
+- **Integrates with:** Gas Town for multi-agent orchestration
+- **Resource files:** commands-reference.md, entity-model.md, sync-and-storage.md, integrations.md
 
 #### sveltekit-pwa-skills
 - **Tech Requirements:** SvelteKit 2.0+, Vite
@@ -1004,6 +1062,8 @@ Try editing a .vue file - the skill should activate.
 | **task-master-prompts** | None | ✅ None | Copy as-is |
 | **shadcn-ui** | Tailwind CSS | ✅ None | "What framework?" "shadcn components?" |
 | **dev-browser** | Bun v1.0+ | ✅ None | "Visual regression?" "A11y audit?" |
+| **gastown** | Go 1.23+, tmux | ✅ None | "Multi-agent coordination?" |
+| **beads** | Go 1.23+ | ✅ None | "Git-native issue tracking?" |
 | **backend-dev-guidelines** | Express/Prisma/Node | ⚠️ Paths + tech check | "Use Express/Prisma?" "Where's backend?" |
 | **frontend-dev-guidelines** | React/MUI v7 | ⚠️⚠️ Paths + framework | "Use React/MUI v7?" "Where's frontend?" |
 | **rust-skills** | Rust/Axum/SQLx | ⚠️ Paths | "Use Rust with Axum?" "Where's Rust code?" |
